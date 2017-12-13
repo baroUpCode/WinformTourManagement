@@ -170,7 +170,6 @@
             this.tourToolStripMenuItem.Name = "tourToolStripMenuItem";
             this.tourToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.tourToolStripMenuItem.Text = "Tour";
-            this.tourToolStripMenuItem.Click += new System.EventHandler(this.tourToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 

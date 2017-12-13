@@ -17,14 +17,10 @@ namespace Test
             InitializeComponent();
         }
 
-        private void tourToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
         private void tourTool_Click(object sender, EventArgs e)
         {
             Tour t = new Tour();
-            t.Show();
+            t.ShowDialog();
         }
         private void CTPDKTool_Click(object sender, EventArgs e)
         {

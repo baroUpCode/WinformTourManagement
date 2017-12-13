@@ -48,7 +48,7 @@
             // txtHanhtrinh
             // 
             this.txtHanhtrinh.Location = new System.Drawing.Point(169, 66);
-            this.txtHanhtrinh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtHanhtrinh.Margin = new System.Windows.Forms.Padding(4);
             this.txtHanhtrinh.Name = "txtHanhtrinh";
             this.txtHanhtrinh.Size = new System.Drawing.Size(265, 22);
             this.txtHanhtrinh.TabIndex = 48;
@@ -56,7 +56,7 @@
             // txtMatour
             // 
             this.txtMatour.Location = new System.Drawing.Point(169, 33);
-            this.txtMatour.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMatour.Margin = new System.Windows.Forms.Padding(4);
             this.txtMatour.Name = "txtMatour";
             this.txtMatour.Size = new System.Drawing.Size(265, 22);
             this.txtMatour.TabIndex = 47;
@@ -90,12 +90,11 @@
             this.label2.Size = new System.Drawing.Size(61, 17);
             this.label2.TabIndex = 42;
             this.label2.Text = "Mã Tour";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnThoat
             // 
             this.btnThoat.Location = new System.Drawing.Point(761, 101);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(100, 28);
             this.btnThoat.TabIndex = 41;
@@ -105,7 +104,7 @@
             // btnHuy
             // 
             this.btnHuy.Location = new System.Drawing.Point(637, 101);
-            this.btnHuy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(4);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(100, 28);
             this.btnHuy.TabIndex = 40;
@@ -115,7 +114,7 @@
             // btnLuu
             // 
             this.btnLuu.Location = new System.Drawing.Point(488, 101);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(100, 28);
             this.btnLuu.TabIndex = 39;
@@ -125,7 +124,7 @@
             // btnSua
             // 
             this.btnSua.Location = new System.Drawing.Point(761, 37);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(100, 28);
             this.btnSua.TabIndex = 38;
@@ -135,7 +134,7 @@
             // btnXoa
             // 
             this.btnXoa.Location = new System.Drawing.Point(637, 37);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(100, 28);
             this.btnXoa.TabIndex = 37;
@@ -145,7 +144,7 @@
             // btnThem
             // 
             this.btnThem.Location = new System.Drawing.Point(488, 37);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(100, 28);
             this.btnThem.TabIndex = 36;
@@ -157,7 +156,7 @@
             this.dtgvTour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvTour.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dtgvTour.Location = new System.Drawing.Point(0, 181);
-            this.dtgvTour.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtgvTour.Margin = new System.Windows.Forms.Padding(4);
             this.dtgvTour.Name = "dtgvTour";
             this.dtgvTour.Size = new System.Drawing.Size(877, 161);
             this.dtgvTour.TabIndex = 35;
@@ -176,7 +175,7 @@
             // txtLotrinh
             // 
             this.txtLotrinh.Location = new System.Drawing.Point(169, 110);
-            this.txtLotrinh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLotrinh.Margin = new System.Windows.Forms.Padding(4);
             this.txtLotrinh.Name = "txtLotrinh";
             this.txtLotrinh.Size = new System.Drawing.Size(265, 22);
             this.txtLotrinh.TabIndex = 49;
@@ -200,10 +199,9 @@
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.dtgvTour);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Tour";
             this.Text = "Tour";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTour)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
