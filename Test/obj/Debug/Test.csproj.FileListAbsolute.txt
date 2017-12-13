@@ -59,3 +59,24 @@ D:\Document\DA-Chuyen De 1 HTTT\Test\Test\obj\Debug\Test.Properties.Resources.re
 D:\Document\DA-Chuyen De 1 HTTT\Test\Test\obj\Debug\Test.csproj.GenerateResource.Cache
 D:\Document\DA-Chuyen De 1 HTTT\Test\Test\obj\Debug\Test.exe
 D:\Document\DA-Chuyen De 1 HTTT\Test\Test\obj\Debug\Test.pdb
+D:\Git\WinformTourManagement\Test\bin\Debug\Test.exe.config
+D:\Git\WinformTourManagement\Test\bin\Debug\Test.exe
+D:\Git\WinformTourManagement\Test\bin\Debug\Test.pdb
+D:\Git\WinformTourManagement\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+D:\Git\WinformTourManagement\Test\obj\Debug\Test.Main.resources
+D:\Git\WinformTourManagement\Test\obj\Debug\Test.Placeable.resources
+D:\Git\WinformTourManagement\Test\obj\Debug\Test.Price.resources
+D:\Git\WinformTourManagement\Test\obj\Debug\Test.Hotel.resources
+D:\Git\WinformTourManagement\Test\obj\Debug\Test.Registration_Form__Details.resources
+D:\Git\WinformTourManagement\Test\obj\Debug\Test.Registration_Form.resources
+D:\Git\WinformTourManagement\Test\obj\Debug\Test.Seasioning_Prices.resources
+D:\Git\WinformTourManagement\Test\obj\Debug\Test.Service.resources
+D:\Git\WinformTourManagement\Test\obj\Debug\Test.Staff.resources
+D:\Git\WinformTourManagement\Test\obj\Debug\Test.The_Stop.resources
+D:\Git\WinformTourManagement\Test\obj\Debug\Test.Tour.resources
+D:\Git\WinformTourManagement\Test\obj\Debug\Test.Login.resources
+D:\Git\WinformTourManagement\Test\obj\Debug\Test.Customers.resources
+D:\Git\WinformTourManagement\Test\obj\Debug\Test.Properties.Resources.resources
+D:\Git\WinformTourManagement\Test\obj\Debug\Test.csproj.GenerateResource.Cache
+D:\Git\WinformTourManagement\Test\obj\Debug\Test.exe
+D:\Git\WinformTourManagement\Test\obj\Debug\Test.pdb
