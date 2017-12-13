@@ -20,8 +20,7 @@ namespace Test
         public void LoadTour()
         {
             string query = "select * from dbo.TOUR";
-            DataProvicder data = new DataProvicder();
-            dtgvTour.DataSource = data.ExecuteQuery(query);
+            dtgvTour.DataSource = DataProvider.Instance.ExecuteQuery(query);
         }
     }
 }

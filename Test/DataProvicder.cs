@@ -8,11 +8,33 @@ using System.Threading.Tasks;
 
 namespace Test
 {
-    public class DataProvicder
+    /// <summary>
+    /// Design Patern Singelton
+    /// </summary>
+    public class DataProvider
     {
-        private string connectionStr = "Data Source=.\\sqlexpress;Initial Catalog=WFORMTOUR;Integrated Security=True";
         /// <summary>
-        /// Trả về đối tượng dữ liệu bảng để thao tác binding data
+        /// Các đối tượng bên ngoài lớp DataProvider chỉ được truyền mỗi lượt một lần, và chỉ cần khởi tạo một lần thông qua thuộc tính
+        /// instance
+        /// </summary>
+        private static DataProvider instance;
+        /// <summary>
+        ///Chỉ có nội bộ mới được set dữ liệu cho lớp DataProvider , còn bên ngoài không được set, chỉ được get 
+        /// </summary>
+        public static DataProvider Instance
+        {
+            //Các lớp bên ngoài thông qua Instance để sử dụng thuộc tính và hàm của DataProvider, nếu Instance=null(đang không được sử dụng thì sẽ khởi tạo một lớp DataProvider mới cho đối tượng đang cần)
+            get
+            { if(DataProvider.instance==null) instance = new DataProvider();
+                return DataProvider.instance;
+            }
+             private set { DataProvider.instance = value;}
+        }
+        private DataProvider() { }
+        private string connectionStr = "Data Source=.\\sqlexpress;Initial Catalog=WFORMTOUR;Integrated Security=True";
+
+        /// <summary>
+        /// Trả về đối tượng dữ liệu bảng để thao tác binding data, danh sách đối tượng có thể null 
         /// </summary>
         /// <param name="query"></param>
         /// <param name="parameter"></param>
@@ -57,7 +79,6 @@ namespace Test
         public int ExecuteNonQuery(string query, object[] parameter = null)
         {
             int dt = 0;
-
             using (SqlConnection connection = new SqlConnection(connectionStr))
             {
                 connection.Open();
@@ -73,13 +94,13 @@ namespace Test
                     if (item.Contains('@'))
                     {
                         //public SqlParameter AddWithValue(string parameterName, object value);
-                        //Lưu giá trị của biến được tìm thấy bằng hàm AddWithValue với hai tham số truyền vào là tên para và giá trị của đối tượng, lưu chuỗi para vào đối tượng object có index=0 
+                        //Lưu giá trị của biến được tìm thấy bằng hàm AddWithValue với hai tham số truyền vào là tên para và giá trị của đối tượng, giá trị của biến đối tượng trong para[i] sẽ tương ứng với biến item 
+                        //vd ExecuteNonquery(query,object[]{01}) với query="SELECT * from dbo.Nhanvien where MANV = @MANV" thì hàm sẽ lấy chuỗi query ra và tìm biến nằm trong chuỗi của query và sau đó thêm giá trị 01 vào biến đó
                         command.Parameters.AddWithValue(item, parameter[i]);
                         i++;
                     }
                 }
-                //Đối tượng adapter lấy dữ liệu từ command và là trung gian để đổ dữ liệu từ command về đối tượng datatable trên View
-                //Chuyển đổi từ sqlTable sang DataTable trên View để các đối tượng trên View có thể lấy dữ liệu và thao tác được
+                //Trả về số lượng dòng query thành công (hoặc bị ảnh hưởng)
                 dt = command.ExecuteNonQuery();
                 connection.Close();
             }
