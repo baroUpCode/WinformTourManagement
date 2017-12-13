@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Test.DAO;
 
 namespace Test
 {
@@ -25,13 +26,22 @@ namespace Test
 
         private void btn__dn_Click(object sender, EventArgs e)
         {
-          
-            Main m = new Main();
-            this.Hide();
-            m.ShowDialog();
-            this.Show();
+            string username = txtTendn.Text;
+            string password = txtMk.Text;
+            if (Login1(username,password))
+            {
+                Main m = new Main();
+                this.Hide();
+                m.ShowDialog();
+                this.Show();
+            }
+            else
+                MessageBox.Show("Sai tài khoản hoặc mật khẩu","Thông Báo");
         }
-
+        bool Login1(string username,string password)
+        {
+            return AccountDAO.Instance.Login1(username,password);
+        }
         private void btn_thoat_Click(object sender, EventArgs e)
         {
             Application.Exit();
