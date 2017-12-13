@@ -25,8 +25,8 @@ namespace Test.DAO
         private AccountDAO() { }
         public bool Login1(string username,string password)
         {
-            string query = "select * from dbo.Account where Tendn = " + username +"AND Matkhau = " + password;
-            var result = DataProvider.Instance.ExecuteQuery(query);
+            string query = "exec proc_Login @username , @password";
+            var result = DataProvider.Instance.ExecuteQuery(query,new object[] {username,password});
             return result.Rows.Count >0 ;
         }
     }

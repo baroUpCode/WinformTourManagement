@@ -42,7 +42,6 @@ namespace Test
         public DataTable ExecuteQuery(string query,object[] parameter = null)
         { 
             DataTable dt = new DataTable();
-            
             using (SqlConnection connection = new SqlConnection(connectionStr)){ 
             connection.Open();
             //Thực thi câu truy vấn được khai báo tới DB đã kết nối từ đối tượng connection, command hiện tại đang giữ dữ liệu trả về
@@ -115,7 +114,6 @@ namespace Test
         public object ExecuteScalar(string query, object[] parameter = null)
         {
             object dt =0;
-
             using (SqlConnection connection = new SqlConnection(connectionStr))
             {
                 connection.Open();

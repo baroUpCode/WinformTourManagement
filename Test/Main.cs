@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Test.DAO;
+using Test.DTO_Model_;
 
 namespace Test
 {
@@ -15,6 +17,7 @@ namespace Test
         public Main()
         {
             InitializeComponent();
+            LoadTour();
         }
 
         private void tourTool_Click(object sender, EventArgs e)
@@ -27,17 +30,6 @@ namespace Test
             Registration_Form__Details ct = new Registration_Form__Details();
             ct.Show();
         }
-
-      
-
-        
-
-        
-       
-       
-
-       
-
         private void DDTQTool_Click_1(object sender, EventArgs e)
         {
             Placeable pl = new Placeable();
@@ -110,7 +102,18 @@ namespace Test
             KM.Show();
         
         }
-        
+        void LoadTour()
+        {
+            //Tạo một biến danh sách đối tượng Tour để lưu lại các Tour có trong DB
+            List<TourDTO> tour = TourDAO.Instance.LoadTourList();
+            //Duyệt qua danh sách và mỗi tour tạo một button 
+            foreach (TourDTO item in tour)
+            {
+                Button btn = new Button() { Width = TourDAO.WidthTour,Height=TourDAO.HeightTour};
+                btn.Text = item.LoTrinh + Environment.NewLine + "("+item.HanhTrinh+")";
+                flpMain.Controls.Add(btn);
+            }
+        }
 
     }
 }

@@ -39,45 +39,41 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 38);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(12, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 17);
+            this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "UserName";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 96);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(12, 78);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 17);
+            this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Password";
             // 
             // txtTendn
             // 
-            this.txtTendn.Location = new System.Drawing.Point(183, 38);
-            this.txtTendn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTendn.Location = new System.Drawing.Point(137, 31);
             this.txtTendn.Name = "txtTendn";
-            this.txtTendn.Size = new System.Drawing.Size(151, 22);
+            this.txtTendn.Size = new System.Drawing.Size(114, 20);
             this.txtTendn.TabIndex = 1;
             // 
             // txtMk
             // 
-            this.txtMk.Location = new System.Drawing.Point(183, 96);
-            this.txtMk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMk.Location = new System.Drawing.Point(137, 78);
             this.txtMk.Name = "txtMk";
-            this.txtMk.Size = new System.Drawing.Size(151, 22);
+            this.txtMk.PasswordChar = '*';
+            this.txtMk.Size = new System.Drawing.Size(114, 20);
             this.txtMk.TabIndex = 2;
             // 
             // btnDn
             // 
-            this.btnDn.Location = new System.Drawing.Point(72, 153);
-            this.btnDn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDn.Location = new System.Drawing.Point(54, 124);
             this.btnDn.Name = "btnDn";
-            this.btnDn.Size = new System.Drawing.Size(100, 28);
+            this.btnDn.Size = new System.Drawing.Size(75, 23);
             this.btnDn.TabIndex = 3;
             this.btnDn.Text = "Đăng nhập";
             this.btnDn.UseVisualStyleBackColor = true;
@@ -85,10 +81,9 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(235, 153);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThoat.Location = new System.Drawing.Point(176, 124);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(100, 28);
+            this.btnThoat.Size = new System.Drawing.Size(75, 23);
             this.btnThoat.TabIndex = 4;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
@@ -96,17 +91,16 @@
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(441, 223);
+            this.ClientSize = new System.Drawing.Size(331, 181);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnDn);
             this.Controls.Add(this.txtMk);
             this.Controls.Add(this.txtTendn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Login";
             this.Text = "Login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);

@@ -30,9 +30,12 @@ namespace Test
             string password = txtMk.Text;
             if (Login1(username,password))
             {
+                
                 Main m = new Main();
                 this.Hide();
                 m.ShowDialog();
+                txtTendn.Clear();
+                txtMk.Clear();
                 this.Show();
             }
             else

@@ -45,13 +45,14 @@
             this.tourTool = new System.Windows.Forms.ToolStripMenuItem();
             this.tourToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.flpMain = new System.Windows.Forms.FlowLayoutPanel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // KhuyenMaiTool
             // 
             this.KhuyenMaiTool.Name = "KhuyenMaiTool";
-            this.KhuyenMaiTool.Size = new System.Drawing.Size(152, 22);
+            this.KhuyenMaiTool.Size = new System.Drawing.Size(137, 22);
             this.KhuyenMaiTool.Text = "Khuyến Mãi";
             this.KhuyenMaiTool.Click += new System.EventHandler(this.KhuyenMaiTool_Click_1);
             // 
@@ -67,28 +68,28 @@
             // GiaGocTool
             // 
             this.GiaGocTool.Name = "GiaGocTool";
-            this.GiaGocTool.Size = new System.Drawing.Size(152, 22);
+            this.GiaGocTool.Size = new System.Drawing.Size(137, 22);
             this.GiaGocTool.Text = "Giá Gốc";
             this.GiaGocTool.Click += new System.EventHandler(this.GiaGocTool_Click_1);
             // 
             // DichVuTool
             // 
             this.DichVuTool.Name = "DichVuTool";
-            this.DichVuTool.Size = new System.Drawing.Size(152, 22);
+            this.DichVuTool.Size = new System.Drawing.Size(135, 22);
             this.DichVuTool.Text = "Dịch Vụ";
             this.DichVuTool.Click += new System.EventHandler(this.DichVuTool_Click_1);
             // 
             // KhachSanTool
             // 
             this.KhachSanTool.Name = "KhachSanTool";
-            this.KhachSanTool.Size = new System.Drawing.Size(152, 22);
+            this.KhachSanTool.Size = new System.Drawing.Size(135, 22);
             this.KhachSanTool.Text = "Khách Sạn";
             this.KhachSanTool.Click += new System.EventHandler(this.KhachSanTool_Click_1);
             // 
             // TinhTool
             // 
             this.TinhTool.Name = "TinhTool";
-            this.TinhTool.Size = new System.Drawing.Size(152, 22);
+            this.TinhTool.Size = new System.Drawing.Size(135, 22);
             this.TinhTool.Text = "Tỉnh Thành";
             this.TinhTool.Click += new System.EventHandler(this.TinhTool_Click_1);
             // 
@@ -105,14 +106,14 @@
             // QLKhachTool
             // 
             this.QLKhachTool.Name = "QLKhachTool";
-            this.QLKhachTool.Size = new System.Drawing.Size(195, 22);
+            this.QLKhachTool.Size = new System.Drawing.Size(194, 22);
             this.QLKhachTool.Text = "Quản Lý Khách Hàng";
             this.QLKhachTool.Click += new System.EventHandler(this.QLKhachTool_Click_1);
             // 
             // CTPDKTool
             // 
             this.CTPDKTool.Name = "CTPDKTool";
-            this.CTPDKTool.Size = new System.Drawing.Size(195, 22);
+            this.CTPDKTool.Size = new System.Drawing.Size(194, 22);
             this.CTPDKTool.Text = "Chi Tiết Phiếu Đăng Ký";
             this.CTPDKTool.Click += new System.EventHandler(this.CTPDKTool_Click_1);
             // 
@@ -129,14 +130,14 @@
             // DangKyTool
             // 
             this.DangKyTool.Name = "DangKyTool";
-            this.DangKyTool.Size = new System.Drawing.Size(195, 22);
+            this.DangKyTool.Size = new System.Drawing.Size(194, 22);
             this.DangKyTool.Text = "Phiếu Đăng Ký";
             this.DangKyTool.Click += new System.EventHandler(this.DangKyTool_Click_1);
             // 
             // NhanVienTool
             // 
             this.NhanVienTool.Name = "NhanVienTool";
-            this.NhanVienTool.Size = new System.Drawing.Size(176, 22);
+            this.NhanVienTool.Size = new System.Drawing.Size(175, 22);
             this.NhanVienTool.Text = "Quản Lý Nhân Viên";
             this.NhanVienTool.Click += new System.EventHandler(this.NhanVienTool_Click_1);
             // 
@@ -168,7 +169,7 @@
             this.tourTool,
             this.DDTQTool});
             this.tourToolStripMenuItem.Name = "tourToolStripMenuItem";
-            this.tourToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.tourToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.tourToolStripMenuItem.Text = "Tour";
             // 
             // menuStrip1
@@ -185,11 +186,19 @@
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // flpMain
+            // 
+            this.flpMain.Location = new System.Drawing.Point(9, 27);
+            this.flpMain.Name = "flpMain";
+            this.flpMain.Size = new System.Drawing.Size(709, 306);
+            this.flpMain.TabIndex = 2;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(729, 341);
+            this.Controls.Add(this.flpMain);
             this.Controls.Add(this.menuStrip1);
             this.Name = "Main";
             this.Text = "Main";
@@ -219,5 +228,6 @@
         private System.Windows.Forms.ToolStripMenuItem tourTool;
         private System.Windows.Forms.ToolStripMenuItem tourToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.FlowLayoutPanel flpMain;
     }
 }

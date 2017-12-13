@@ -45,8 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO\AccountDAO.cs" />
-    <Compile Include="DAO\DataProvicder.cs" />
+    <Compile Include="DAO%28Controller%29\AccountDAO.cs" />
+    <Compile Include="DAO%28Controller%29\DataProvicder.cs" />
+    <Compile Include="DAO%28Controller%29\TourDAO.cs" />
+    <Compile Include="DTO%28Model%29\TourDTO.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
