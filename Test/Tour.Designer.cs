@@ -47,95 +47,109 @@
             // 
             // txtHanhtrinh
             // 
-            this.txtHanhtrinh.Location = new System.Drawing.Point(127, 54);
+            this.txtHanhtrinh.Location = new System.Drawing.Point(169, 66);
+            this.txtHanhtrinh.Margin = new System.Windows.Forms.Padding(4);
             this.txtHanhtrinh.Name = "txtHanhtrinh";
-            this.txtHanhtrinh.Size = new System.Drawing.Size(200, 20);
+            this.txtHanhtrinh.Size = new System.Drawing.Size(265, 22);
             this.txtHanhtrinh.TabIndex = 48;
             // 
             // txtMatour
             // 
-            this.txtMatour.Location = new System.Drawing.Point(127, 27);
+            this.txtMatour.Location = new System.Drawing.Point(169, 33);
+            this.txtMatour.Margin = new System.Windows.Forms.Padding(4);
             this.txtMatour.Name = "txtMatour";
-            this.txtMatour.Size = new System.Drawing.Size(200, 20);
+            this.txtMatour.Size = new System.Drawing.Size(265, 22);
             this.txtMatour.TabIndex = 47;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 61);
+            this.label4.Location = new System.Drawing.Point(36, 75);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 13);
+            this.label4.Size = new System.Drawing.Size(79, 17);
             this.label4.TabIndex = 44;
             this.label4.Text = "Hành Trình";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 92);
+            this.label3.Location = new System.Drawing.Point(36, 113);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.Size = new System.Drawing.Size(61, 17);
             this.label3.TabIndex = 43;
             this.label3.Text = "Lộ Trình";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 30);
+            this.label2.Location = new System.Drawing.Point(36, 37);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.Size = new System.Drawing.Size(61, 17);
             this.label2.TabIndex = 42;
             this.label2.Text = "Mã Tour";
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(571, 82);
+            this.btnThoat.Location = new System.Drawing.Point(761, 101);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(75, 23);
+            this.btnThoat.Size = new System.Drawing.Size(100, 28);
             this.btnThoat.TabIndex = 41;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(478, 82);
+            this.btnHuy.Location = new System.Drawing.Point(637, 101);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(4);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(75, 23);
+            this.btnHuy.Size = new System.Drawing.Size(100, 28);
             this.btnHuy.TabIndex = 40;
             this.btnHuy.Text = "Huỷ";
             this.btnHuy.UseVisualStyleBackColor = true;
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(366, 82);
+            this.btnLuu.Location = new System.Drawing.Point(488, 101);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(75, 23);
+            this.btnLuu.Size = new System.Drawing.Size(100, 28);
             this.btnLuu.TabIndex = 39;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(571, 30);
+            this.btnSua.Location = new System.Drawing.Point(761, 37);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(75, 23);
+            this.btnSua.Size = new System.Drawing.Size(100, 28);
             this.btnSua.TabIndex = 38;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(478, 30);
+            this.btnXoa.Location = new System.Drawing.Point(637, 37);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 23);
+            this.btnXoa.Size = new System.Drawing.Size(100, 28);
             this.btnXoa.TabIndex = 37;
             this.btnXoa.Text = "Xoá";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(366, 30);
+            this.btnThem.Location = new System.Drawing.Point(488, 37);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 23);
+            this.btnThem.Size = new System.Drawing.Size(100, 28);
             this.btnThem.TabIndex = 36;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
@@ -145,33 +159,36 @@
             // 
             this.dtgvTour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvTour.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dtgvTour.Location = new System.Drawing.Point(0, 147);
+            this.dtgvTour.Location = new System.Drawing.Point(0, 181);
+            this.dtgvTour.Margin = new System.Windows.Forms.Padding(4);
             this.dtgvTour.Name = "dtgvTour";
-            this.dtgvTour.Size = new System.Drawing.Size(658, 131);
+            this.dtgvTour.Size = new System.Drawing.Size(877, 161);
             this.dtgvTour.TabIndex = 35;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(235, 2);
+            this.label1.Location = new System.Drawing.Point(313, 2);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 20);
+            this.label1.Size = new System.Drawing.Size(196, 25);
             this.label1.TabIndex = 34;
             this.label1.Text = "THÔNG TIN TOUR";
             // 
             // txtLotrinh
             // 
-            this.txtLotrinh.Location = new System.Drawing.Point(127, 89);
+            this.txtLotrinh.Location = new System.Drawing.Point(169, 110);
+            this.txtLotrinh.Margin = new System.Windows.Forms.Padding(4);
             this.txtLotrinh.Name = "txtLotrinh";
-            this.txtLotrinh.Size = new System.Drawing.Size(200, 20);
+            this.txtLotrinh.Size = new System.Drawing.Size(265, 22);
             this.txtLotrinh.TabIndex = 49;
             // 
             // Tour
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 278);
+            this.ClientSize = new System.Drawing.Size(877, 342);
             this.Controls.Add(this.txtLotrinh);
             this.Controls.Add(this.txtHanhtrinh);
             this.Controls.Add(this.txtMatour);
@@ -186,6 +203,7 @@
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.dtgvTour);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Tour";
             this.Text = "Tour";
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTour)).EndInit();
