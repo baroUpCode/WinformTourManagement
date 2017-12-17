@@ -86,10 +86,13 @@ namespace Test
                 string matour = txtMatour.Text;
                 string hanhtrinh = txtHanhtrinh.Text;
                 string lotrinh = txtLotrinh.Text;
-                if (TourDAO.Instance.InsertTour(matour, hanhtrinh, lotrinh))
+                float giatour = 0;
+                int maquy = 1;
+                int matrangthai=1;
+                int soluonghientai = 0;
+                if (TourDAO.Instance.InsertTour(matour, hanhtrinh, lotrinh,giatour,maquy,matrangthai,soluonghientai))
                 {
                     MessageBox.Show("Thêm tour thành công", "Thông báo");
-                  
 
                 }
                 else

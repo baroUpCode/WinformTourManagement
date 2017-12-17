@@ -29,10 +29,10 @@ namespace Test.DAO
 
         }
         private TourDAO() { }
-        public bool InsertTour(string matour,string hanhtrinh,string lotrinh)
+        public bool InsertTour(string matour,string hanhtrinh,string lotrinh,float giatour, int maquy, int matrangthai, int soluonghientai)
         {
-            string query = /*string.Format("insert dbo.TOUR(MaTour, HanhTrinh, LoTrinh) values(N'{0}', N'{1}', N'{2}')", matour, hanhtrinh, lotrinh);*/"exec THEMTOUR @matour , @hanhtrinh , @lotrinh ";
-            var result = DataProvider.Instance.ExecuteNonQuery(query,new object[] {matour,hanhtrinh,lotrinh});// bien tra ve kieu int, gia tri la so luong ca dong duoc them vao 
+            string query = /*string.Format("insert dbo.TOUR(MaTour, HanhTrinh, LoTrinh) values(N'{0}', N'{1}', N'{2}')", matour, hanhtrinh, lotrinh);*/"exec THEMTOUR @matour , @hanhtrinh , @lotrinh , @giatour , @maquy , @matrangthai , @soluonghientai ";
+            var result = DataProvider.Instance.ExecuteNonQuery(query,new object[] {matour,hanhtrinh,lotrinh,giatour,maquy,matrangthai,soluonghientai});// bien tra ve kieu int, gia tri la so luong ca dong duoc them vao 
             //Tra ve true
             return result > 0;//result >0 == true , neu co 1 dong duoc them vao thanh cong thi result=1 va InsertTour() la true
         }
