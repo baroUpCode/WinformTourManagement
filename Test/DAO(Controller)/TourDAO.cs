@@ -23,7 +23,7 @@ namespace Test.DAO
         public DataTable GetListTour()
         {
             //DataTable dt = new DataTable();
-            string query = "select * from dbo.Tour";
+            string query = "select MaTour,HanhTrinh,LoTrinh,GiaTour,MaQuy,SoluongHientai, tr.TrangThai from TOUR t  Left Join  TrangThai tr on t.MaTrangThai=tr.MaTrangThai";
             DataTable dt =  DataProvider.Instance.ExecuteQuery(query);
             return dt;
 
@@ -57,7 +57,7 @@ namespace Test.DAO
         public List<TourDTO> LoadTourList()
         {
             List<TourDTO> list = new List<TourDTO>();
-            string query = "exec proc_GetTourList";
+            string query = "exec GetlistTour";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow row in dt.Rows)
             {
@@ -66,6 +66,24 @@ namespace Test.DAO
                 list.Add(tour);
             }
             return list;
+        }
+        public DataTable LoadListQuy()
+        {
+            string query = "select * from Quy";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            return dt;
+        }
+        public DataTable LoadListTrangThai()
+        {
+            string query = "select * from TrangThai";
+            //List<TrangThaiDTO> list = new List<TrangThaiDTO>();
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            //foreach(DataRow dr in dt.Rows)
+            //{
+            //    TrangThaiDTO tt = new TrangThaiDTO(dr);
+            //   list.Add(tt);
+            //}
+            return dt;
         }
     }
 }

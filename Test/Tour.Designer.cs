@@ -42,6 +42,15 @@
             this.dtgvTour = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtLotrinh = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.Giatour = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtDadangky = new System.Windows.Forms.TextBox();
+            this.txtGiatour = new System.Windows.Forms.TextBox();
+            this.cbxTrangthai = new System.Windows.Forms.ComboBox();
+            this.cbxMaquy = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTour)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +73,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(36, 75);
+            this.label4.Location = new System.Drawing.Point(26, 71);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 17);
@@ -74,7 +83,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 113);
+            this.label3.Location = new System.Drawing.Point(26, 110);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 17);
@@ -84,7 +93,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 37);
+            this.label2.Location = new System.Drawing.Point(26, 33);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 17);
@@ -93,7 +102,7 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(761, 101);
+            this.btnThoat.Location = new System.Drawing.Point(780, 202);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(100, 28);
@@ -104,7 +113,7 @@
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(637, 101);
+            this.btnHuy.Location = new System.Drawing.Point(638, 202);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(4);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(100, 28);
@@ -115,7 +124,7 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(488, 101);
+            this.btnLuu.Location = new System.Drawing.Point(488, 202);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(100, 28);
@@ -126,7 +135,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(761, 37);
+            this.btnSua.Location = new System.Drawing.Point(334, 202);
             this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(100, 28);
@@ -137,7 +146,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(637, 37);
+            this.btnXoa.Location = new System.Drawing.Point(190, 202);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(100, 28);
@@ -148,7 +157,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(488, 37);
+            this.btnThem.Location = new System.Drawing.Point(29, 202);
             this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(100, 28);
@@ -159,12 +168,14 @@
             // 
             // dtgvTour
             // 
+            this.dtgvTour.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtgvTour.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dtgvTour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvTour.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dtgvTour.Location = new System.Drawing.Point(0, 181);
+            this.dtgvTour.Location = new System.Drawing.Point(0, 249);
             this.dtgvTour.Margin = new System.Windows.Forms.Padding(4);
             this.dtgvTour.Name = "dtgvTour";
-            this.dtgvTour.Size = new System.Drawing.Size(877, 161);
+            this.dtgvTour.Size = new System.Drawing.Size(895, 161);
             this.dtgvTour.TabIndex = 35;
             // 
             // label1
@@ -186,11 +197,101 @@
             this.txtLotrinh.Size = new System.Drawing.Size(265, 22);
             this.txtLotrinh.TabIndex = 49;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(36, 223);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 17);
+            this.label5.TabIndex = 50;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(553, 33);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(54, 17);
+            this.label6.TabIndex = 51;
+            this.label6.Text = "Mã quý";
+            // 
+            // Giatour
+            // 
+            this.Giatour.AutoSize = true;
+            this.Giatour.Location = new System.Drawing.Point(26, 146);
+            this.Giatour.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Giatour.Name = "Giatour";
+            this.Giatour.Size = new System.Drawing.Size(64, 17);
+            this.Giatour.TabIndex = 52;
+            this.Giatour.Text = "Giá Tour";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(553, 71);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(107, 17);
+            this.label7.TabIndex = 53;
+            this.label7.Text = "Trạng thái Tour";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(553, 108);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(80, 17);
+            this.label8.TabIndex = 54;
+            this.label8.Text = "Đã đăng ký";
+            // 
+            // txtDadangky
+            // 
+            this.txtDadangky.Location = new System.Drawing.Point(719, 105);
+            this.txtDadangky.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDadangky.Name = "txtDadangky";
+            this.txtDadangky.Size = new System.Drawing.Size(161, 22);
+            this.txtDadangky.TabIndex = 55;
+            // 
+            // txtGiatour
+            // 
+            this.txtGiatour.Location = new System.Drawing.Point(169, 146);
+            this.txtGiatour.Margin = new System.Windows.Forms.Padding(4);
+            this.txtGiatour.Name = "txtGiatour";
+            this.txtGiatour.Size = new System.Drawing.Size(265, 22);
+            this.txtGiatour.TabIndex = 58;
+            // 
+            // cbxTrangthai
+            // 
+            this.cbxTrangthai.FormattingEnabled = true;
+            this.cbxTrangthai.Location = new System.Drawing.Point(719, 64);
+            this.cbxTrangthai.Name = "cbxTrangthai";
+            this.cbxTrangthai.Size = new System.Drawing.Size(161, 24);
+            this.cbxTrangthai.TabIndex = 59;
+            // 
+            // cbxMaquy
+            // 
+            this.cbxMaquy.FormattingEnabled = true;
+            this.cbxMaquy.Location = new System.Drawing.Point(719, 26);
+            this.cbxMaquy.Name = "cbxMaquy";
+            this.cbxMaquy.Size = new System.Drawing.Size(161, 24);
+            this.cbxMaquy.TabIndex = 60;
+            // 
             // Tour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(877, 342);
+            this.ClientSize = new System.Drawing.Size(895, 410);
+            this.Controls.Add(this.cbxMaquy);
+            this.Controls.Add(this.cbxTrangthai);
+            this.Controls.Add(this.txtGiatour);
+            this.Controls.Add(this.txtDadangky);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.Giatour);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtLotrinh);
             this.Controls.Add(this.txtHanhtrinh);
             this.Controls.Add(this.txtMatour);
@@ -230,7 +331,15 @@
         private System.Windows.Forms.DataGridView dtgvTour;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtLotrinh;
-
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label Giatour;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtDadangky;
+        private System.Windows.Forms.TextBox txtGiatour;
+        private System.Windows.Forms.ComboBox cbxTrangthai;
+        private System.Windows.Forms.ComboBox cbxMaquy;
     }
 }
 
