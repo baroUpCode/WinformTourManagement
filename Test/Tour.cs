@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Test.DAO;
-
+using Test.DTO_Model_;
 
 namespace Test
 {
@@ -18,9 +18,9 @@ namespace Test
         {
             InitializeComponent();
             LoadQuy();
-            LoadTrangThai();
             LoadListTour();
             DefaultControl();
+            LoadTrangThai();
 
         }
         #region
@@ -40,6 +40,7 @@ namespace Test
             txtGiatour.Enabled = false;
             cbxMaquy.Enabled = false;
             cbxTrangthai.Enabled = false;
+            dtgvTour.Enabled = true;
 
         }
          void ClearText()
@@ -50,7 +51,6 @@ namespace Test
             txtDadangky.Clear();
             txtGiatour.Clear();
             cbxMaquy.Text = "";
-            cbxTrangthai.Text = "";
         }
 
         void EnableText()
@@ -61,7 +61,6 @@ namespace Test
             txtDadangky.Enabled = true;
             txtGiatour.Enabled = true;
             cbxMaquy.Enabled = true;
-            cbxTrangthai.Enabled = true;
         }
         void EnableButton()
         {
@@ -92,11 +91,15 @@ namespace Test
             cbxMaquy.ValueMember = "MaQuy";
 
         }
+        /// <summary>
+        /// Tạo đối tượng danh sách TrangThai để load lên và dễ dàng thao tác khi thêm xóa sửa;
+        /// </summary>
         void LoadTrangThai()
         {
             cbxTrangthai.DataSource = TourDAO.Instance.LoadListTrangThai();
             cbxTrangthai.DisplayMember = "TrangThai";
             cbxTrangthai.ValueMember = "MaTrangThai";
+            cbxTrangthai.SelectedValue = 1;
         }
         void TourBinding()
         {
@@ -118,30 +121,24 @@ namespace Test
             cbxTrangthai.DataBindings.Add("Text", dtgvTour.DataSource, "TrangThai", true, DataSourceUpdateMode.Never);
         }
         void ThemTour()
-        { 
-            if(txtMatour.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập mã tour.", "Thông Báo",MessageBoxButtons.OK);
-            }
-            else{
+        {       
                 string matour = txtMatour.Text;
                 string hanhtrinh = txtHanhtrinh.Text;
                 string lotrinh = txtLotrinh.Text;
-                float giatour = float.Parse(txtGiatour.Text);
+                float giatour = (float)Convert.ToDouble(txtGiatour.Text); 
                 int maquy = Int32.Parse(cbxMaquy.Text);
-                int matrangthai= Int32.Parse(cbxTrangthai.Text);
-                int soluonghientai = Int32.Parse(txtDadangky.Text);
-                if (TourDAO.Instance.InsertTour(matour, hanhtrinh, lotrinh,giatour,maquy,matrangthai,soluonghientai))
-                {
-                    MessageBox.Show("Thêm tour thành công", "Thông báo");
-
-                }
+                int trangthai = Int32.Parse(cbxTrangthai.SelectedValue.ToString());
+                int soluonghientai = !string.IsNullOrEmpty(txtDadangky.Text)?Int32.Parse(txtDadangky.Text) : 0;
+                if (TourDAO.Instance.InsertTour(matour, hanhtrinh, lotrinh, giatour, maquy, trangthai,soluonghientai))
+                   {
+                     MessageBox.Show("Thêm tour thành công", "Thông báo");
+                   }
                 else
-                {
+                   {
                     MessageBox.Show("Có lỗi xảy ra!", "Thông báo");
-                }
+                     txtMatour.Focus();
+                   }  
             }
-        }
         void SuaTour()
         {
             string matour = txtMatour.Text;
@@ -150,13 +147,11 @@ namespace Test
             if (TourDAO.Instance.UpdateTour(matour, hanhtrinh, lotrinh))
             {
                 MessageBox.Show("Thông tin tour được sửa thành công.", "Thông báo");
-                //LoadListTour();
-                //DisableButton();
-                //DisableText();
             }
             else
             {
                 MessageBox.Show("Có lỗi xảy ra!", "Thông báo");
+                txtMatour.Focus();
             }
         }
       
@@ -164,7 +159,12 @@ namespace Test
         #region events
         private void btnThem_Click(object sender, EventArgs e)
         {
+
+            cbxTrangthai.DataBindings.Clear();
+            cbxTrangthai.SelectedIndex = 0;
             btnSua.Enabled = false;
+            dtgvTour.Enabled = false;
+            cbxTrangthai.Enabled = false;
             EnableButton();
             ClearText();
             EnableText();
@@ -207,14 +207,78 @@ namespace Test
         {
             LoadListTour();
             DefaultControl();
+            ClearText();
         }
-
-        #endregion
-
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        private void txtGiatour_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtDadangky_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtMatour_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtMatour.Text.Trim()))
+            {
+                MessageBox.Show("Vui lòng nhập mã tour ! ", "Thông Báo");
+                txtMatour.Focus();
+            }
+            if(TourDAO.Instance.GetMaTour(txtMatour.Text))
+            {
+                MessageBox.Show("Mã tour đã tồn tại", "Thông Báo");
+                txtMatour.Focus();
+            } 
+        }
+        private void txtGiatour_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtGiatour.Text.Trim()))
+            {
+                MessageBox.Show("Vui lòng nhập giá tour! ", "Thông Báo");
+            }
+        }
+
+        private void cbxMaquy_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(cbxMaquy.Text.Trim()))
+            {
+                MessageBox.Show("Vui lòng chọn quý ! ", "Thông Báo");
+                cbxMaquy.Focus();
+            }
+        }
+
+        private void txtHanhtrinh_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtHanhtrinh.Text.Trim()))
+            {
+                MessageBox.Show("Vui lòng nhập hành trình ! ", "Thông Báo");
+                txtHanhtrinh.Focus();
+            }
+        }
+
+        private void txtLotrinh_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtLotrinh.Text.Trim()))
+            {
+                MessageBox.Show("Vui lòng nhập lộ trình! ", "Thông Báo");
+                txtLotrinh.Focus();
+            }
+        }
     }
+    #endregion
+
+
 }

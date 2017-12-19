@@ -61,6 +61,7 @@
             this.txtHanhtrinh.Name = "txtHanhtrinh";
             this.txtHanhtrinh.Size = new System.Drawing.Size(265, 22);
             this.txtHanhtrinh.TabIndex = 48;
+            this.txtHanhtrinh.Leave += new System.EventHandler(this.txtHanhtrinh_Leave);
             // 
             // txtMatour
             // 
@@ -69,6 +70,7 @@
             this.txtMatour.Name = "txtMatour";
             this.txtMatour.Size = new System.Drawing.Size(265, 22);
             this.txtMatour.TabIndex = 47;
+            this.txtMatour.Leave += new System.EventHandler(this.txtMatour_Leave);
             // 
             // label4
             // 
@@ -196,6 +198,7 @@
             this.txtLotrinh.Name = "txtLotrinh";
             this.txtLotrinh.Size = new System.Drawing.Size(265, 22);
             this.txtLotrinh.TabIndex = 49;
+            this.txtLotrinh.Leave += new System.EventHandler(this.txtLotrinh_Leave);
             // 
             // label5
             // 
@@ -253,6 +256,7 @@
             this.txtDadangky.Name = "txtDadangky";
             this.txtDadangky.Size = new System.Drawing.Size(161, 22);
             this.txtDadangky.TabIndex = 55;
+            this.txtDadangky.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDadangky_KeyPress);
             // 
             // txtGiatour
             // 
@@ -261,6 +265,8 @@
             this.txtGiatour.Name = "txtGiatour";
             this.txtGiatour.Size = new System.Drawing.Size(265, 22);
             this.txtGiatour.TabIndex = 58;
+            this.txtGiatour.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGiatour_KeyPress);
+            this.txtGiatour.Leave += new System.EventHandler(this.txtGiatour_Leave);
             // 
             // cbxTrangthai
             // 
@@ -277,6 +283,7 @@
             this.cbxMaquy.Name = "cbxMaquy";
             this.cbxMaquy.Size = new System.Drawing.Size(161, 24);
             this.cbxMaquy.TabIndex = 60;
+            this.cbxMaquy.Leave += new System.EventHandler(this.cbxMaquy_Leave);
             // 
             // Tour
             // 

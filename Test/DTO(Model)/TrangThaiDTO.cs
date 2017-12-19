@@ -14,7 +14,7 @@ namespace Test.DTO_Model_
 
         public int MaTrangthai { get => maTrangthai; set => maTrangthai = value; }
         public string TrangThai { get => trangThai; set => trangThai = value; }
-        public TrangThaiDTO(int matrangthai, string trangthai) 
+        public TrangThaiDTO(int matrangthai, string trangthai)
         {
             this.MaTrangthai = matrangthai;
             this.TrangThai = trangthai;

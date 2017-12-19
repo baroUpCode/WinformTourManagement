@@ -29,10 +29,10 @@ namespace Test.DAO
 
         }
         private TourDAO() { }
-        public bool InsertTour(string matour,string hanhtrinh,string lotrinh,float giatour, int maquy, int matrangthai, int soluonghientai)
+        public bool InsertTour(string matour,string hanhtrinh,string lotrinh,float giatour, int maquy, int trangthai, int dadangky)
         {
-            string query = /*string.Format("insert dbo.TOUR(MaTour, HanhTrinh, LoTrinh) values(N'{0}', N'{1}', N'{2}')", matour, hanhtrinh, lotrinh);*/"exec THEMTOUR @matour , @hanhtrinh , @lotrinh , @giatour , @maquy , @matrangthai , @soluonghientai ";
-            var result = DataProvider.Instance.ExecuteNonQuery(query,new object[] {matour,hanhtrinh,lotrinh,giatour,maquy,matrangthai,soluonghientai});// bien tra ve kieu int, gia tri la so luong ca dong duoc them vao 
+            string query = "insert dbo.TOUR(MaTour, HanhTrinh, LoTrinh, GiaTour, MaQuy, MaTrangThai , SoluongHientai) values( @matour , @hanhtrinh , @lotrinh , @giatour , @maquy , @trangthai , @dadangky )";/*, matour, hanhtrinh, lotrinh,giatour,maquy,matrangthai,soluonghientai);*//*"exec THEMTOUR @matour , @hanhtrinh , @lotrinh , @giatour , @maquy , @matrangthai , @soluonghientai ";*/
+            var result = DataProvider.Instance.ExecuteNonQuery(query,new object[] {matour,hanhtrinh,lotrinh,giatour,maquy,trangthai,dadangky});// bien tra ve kieu int, gia tri la so luong ca dong duoc them vao 
             //Tra ve true
             return result > 0;//result >0 == true , neu co 1 dong duoc them vao thanh cong thi result=1 va InsertTour() la true
         }
@@ -75,15 +75,29 @@ namespace Test.DAO
         }
         public DataTable LoadListTrangThai()
         {
-            string query = "select * from TrangThai";
-            //List<TrangThaiDTO> list = new List<TrangThaiDTO>();
+            string query = "exec GetTrangThaiList";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             //foreach(DataRow dr in dt.Rows)
             //{
             //    TrangThaiDTO tt = new TrangThaiDTO(dr);
-            //   list.Add(tt);
+            //    list.Add(tt);
             //}
             return dt;
+        }
+        public bool GetMaTour(string id)
+        {
+            string query = "select * from TOUR where MaTour = @matour ";
+            List<TourDTO> dto = new List<TourDTO>();
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query,new object[] { id });
+            if (dt.Rows.Count > 0)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
         }
     }
 }
