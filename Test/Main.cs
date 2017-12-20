@@ -88,13 +88,6 @@ namespace Test
 
         }
 
-        private void GiaGocTool_Click_1(object sender, EventArgs e)
-        {
-        
-            Price price = new Price();
-            price.Show();
-        }
-
         private void KhuyenMaiTool_Click_1(object sender, EventArgs e)
         {
         

@@ -70,7 +70,6 @@
             this.GiaGocTool.Name = "GiaGocTool";
             this.GiaGocTool.Size = new System.Drawing.Size(137, 22);
             this.GiaGocTool.Text = "Giá Gốc";
-            this.GiaGocTool.Click += new System.EventHandler(this.GiaGocTool_Click_1);
             // 
             // DichVuTool
             // 

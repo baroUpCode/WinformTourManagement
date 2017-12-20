@@ -3,7 +3,6 @@ D:\Git\WinformTourManagement\Test\bin\Debug\Test.exe
 D:\Git\WinformTourManagement\Test\bin\Debug\Test.pdb
 D:\Git\WinformTourManagement\Test\obj\Debug\Test.Main.resources
 D:\Git\WinformTourManagement\Test\obj\Debug\Test.Placeable.resources
-D:\Git\WinformTourManagement\Test\obj\Debug\Test.Price.resources
 D:\Git\WinformTourManagement\Test\obj\Debug\Test.Hotel.resources
 D:\Git\WinformTourManagement\Test\obj\Debug\Test.Registration_Form__Details.resources
 D:\Git\WinformTourManagement\Test\obj\Debug\Test.Registration_Form.resources

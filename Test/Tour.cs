@@ -199,16 +199,25 @@ namespace Test
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (btnSua.Enabled == false)
+            if (txtMatour.Text == "" || txtLotrinh.Text == "" || txtHanhtrinh.Text == "" || txtGiatour.Text == "" || txtDadangky.Text == "" || cbxMaquy.Text == "")
             {
-                ThemTour();
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin ! ","Thông Báo");
+                txtMatour.Focus();
             }
-            else if (btnThem.Enabled == false)
+            else
             {
-                SuaTour();
+                if (btnSua.Enabled == false)
+                {
+                    ThemTour();
+                }
+                else if (btnThem.Enabled == false)
+                {
+                    SuaTour();
+                }
+                LoadListTour();
+                DefaultControl();
             }
-            LoadListTour();
-            DefaultControl();
+         
         }
         /// <summary>
         /// Khi Hủy thì Load lại dtgvTour và set lại DefaultControl sau đó clear toàn bộ TextControl để trả về trạng thái Default
