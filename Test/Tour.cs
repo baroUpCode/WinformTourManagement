@@ -128,8 +128,8 @@ namespace Test
                 float giatour = (float)Convert.ToDouble(txtGiatour.Text); 
                 int maquy = Int32.Parse(cbxMaquy.Text);
                 int trangthai = Int32.Parse(cbxTrangthai.SelectedValue.ToString());
-                int soluonghientai = !string.IsNullOrEmpty(txtDadangky.Text)?Int32.Parse(txtDadangky.Text) : 0;
-                if (TourDAO.Instance.InsertTour(matour, hanhtrinh, lotrinh, giatour, maquy, trangthai,soluonghientai))
+                int dadangky = !string.IsNullOrEmpty(txtDadangky.Text)?Int32.Parse(txtDadangky.Text) : 0;
+                if (TourDAO.Instance.InsertTour(matour, hanhtrinh, lotrinh, giatour, maquy, trangthai, dadangky))
                    {
                      MessageBox.Show("Thêm tour thành công", "Thông báo");
                    }
@@ -144,7 +144,11 @@ namespace Test
             string matour = txtMatour.Text;
             string hanhtrinh = txtHanhtrinh.Text;
             string lotrinh = txtLotrinh.Text;
-            if (TourDAO.Instance.UpdateTour(matour, hanhtrinh, lotrinh))
+            float giatour = (float)Convert.ToDouble(txtGiatour.Text);
+            int maquy = Int32.Parse(cbxMaquy.Text);
+            int matrangthai = Int32.Parse(cbxTrangthai.SelectedValue.ToString());
+            int dadangky = Int32.Parse(txtDadangky.Text);
+            if (TourDAO.Instance.UpdateTour(matour, hanhtrinh, lotrinh,giatour,maquy, matrangthai, dadangky))
             {
                 MessageBox.Show("Thông tin tour được sửa thành công.", "Thông báo");
             }
@@ -185,9 +189,12 @@ namespace Test
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+
             btnThem.Enabled = false;
             EnableButton();
             EnableText();
+            cbxTrangthai.Enabled = true;
+            txtMatour.Enabled = false;
 
         }
         private void btnLuu_Click(object sender, EventArgs e)
@@ -203,6 +210,11 @@ namespace Test
             LoadListTour();
             DefaultControl();
         }
+        /// <summary>
+        /// Khi Hủy thì Load lại dtgvTour và set lại DefaultControl sau đó clear toàn bộ TextControl để trả về trạng thái Default
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnHuy_Click(object sender, EventArgs e)
         {
             LoadListTour();
@@ -213,7 +225,11 @@ namespace Test
         {
             this.Close();
         }
-
+        /// <summary>
+        /// Nếu tồn tại chuỗi trong control với sự kiện KeyPress thì handle lại và không cho nhập
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtGiatour_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -221,7 +237,11 @@ namespace Test
                 e.Handled = true;
             }
         }
-
+        /// <summary>
+        /// Nếu tồn tại chuỗi trong control với sự kiện KeyPress thì handle lại và không cho nhập
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtDadangky_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -229,7 +249,11 @@ namespace Test
                 e.Handled = true;
             }
         }
-
+        /// <summary>
+        /// Không được để trống và không được trùng với TourID khi change focus 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtMatour_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtMatour.Text.Trim()))
@@ -243,6 +267,11 @@ namespace Test
                 txtMatour.Focus();
             } 
         }
+        /// <summary>
+        /// Không được để trống khi change focus
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtGiatour_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtGiatour.Text.Trim()))
@@ -250,7 +279,11 @@ namespace Test
                 MessageBox.Show("Vui lòng nhập giá tour! ", "Thông Báo");
             }
         }
-
+        /// <summary>
+        /// Không được để trống khi change focus
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cbxMaquy_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(cbxMaquy.Text.Trim()))
@@ -259,7 +292,11 @@ namespace Test
                 cbxMaquy.Focus();
             }
         }
-
+        /// <summary>
+        /// Không được để trống khi change focus
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtHanhtrinh_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtHanhtrinh.Text.Trim()))
@@ -268,7 +305,11 @@ namespace Test
                 txtHanhtrinh.Focus();
             }
         }
-
+        /// <summary>
+        /// Không được để trống khi change focus
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtLotrinh_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtLotrinh.Text.Trim()))
@@ -276,6 +317,17 @@ namespace Test
                 MessageBox.Show("Vui lòng nhập lộ trình! ", "Thông Báo");
                 txtLotrinh.Focus();
             }
+        }
+
+        private void cbxTrangthai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+            e.Handled = true;
+        }
+
+        private void cbxMaquy_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
     #endregion

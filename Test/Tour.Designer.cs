@@ -275,6 +275,7 @@
             this.cbxTrangthai.Name = "cbxTrangthai";
             this.cbxTrangthai.Size = new System.Drawing.Size(161, 24);
             this.cbxTrangthai.TabIndex = 59;
+            this.cbxTrangthai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbxTrangthai_KeyPress);
             // 
             // cbxMaquy
             // 
@@ -283,6 +284,7 @@
             this.cbxMaquy.Name = "cbxMaquy";
             this.cbxMaquy.Size = new System.Drawing.Size(161, 24);
             this.cbxMaquy.TabIndex = 60;
+            this.cbxMaquy.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbxMaquy_KeyPress);
             this.cbxMaquy.Leave += new System.EventHandler(this.cbxMaquy_Leave);
             // 
             // Tour

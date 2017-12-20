@@ -26,7 +26,6 @@ namespace Test.DAO
             string query = "select MaTour,HanhTrinh,LoTrinh,GiaTour,MaQuy,SoluongHientai, tr.TrangThai from TOUR t  Left Join  TrangThai tr on t.MaTrangThai=tr.MaTrangThai";
             DataTable dt =  DataProvider.Instance.ExecuteQuery(query);
             return dt;
-
         }
         private TourDAO() { }
         public bool InsertTour(string matour,string hanhtrinh,string lotrinh,float giatour, int maquy, int trangthai, int dadangky)
@@ -42,10 +41,10 @@ namespace Test.DAO
             var result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
-        public bool UpdateTour(string matour,string hanhtrinh, string lotrinh)
+        public bool UpdateTour(string matour,string hanhtrinh, string lotrinh , float giatour, int maquy , int matrangthai , int dadangky )
         {
-            string query = "exec SUATOUR @matour , @hanhtrinh , @lotrinh";
-            var result = DataProvider.Instance.ExecuteNonQuery(query, new object[] {matour,hanhtrinh,lotrinh});
+            string query = "exec SUATOUR @matour , @hanhtrinh , @lotrinh , @giatour , @maquy , @matrangthai , @dadangky";
+            var result = DataProvider.Instance.ExecuteNonQuery(query, new object[] {matour,hanhtrinh,lotrinh,giatour,maquy,matrangthai,dadangky});
             return result > 0;
         }
         //public DataTable GetTourByMaTour(string matour)
