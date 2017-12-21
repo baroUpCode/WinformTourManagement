@@ -26,5 +26,11 @@ namespace Test.DAO_Controller_
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;
         }
+        public bool InsertPlaceable(string madd, string madiem , string diachi, string diemtq)
+        {
+            string query = "insert dbo.DiaDiemTQ(MaDD, MaDiem, DiaChi, DiemTQ) values( @madd , @madiem , @diachi , @diemtq )";
+            int dt = DataProvider.Instance.ExecuteNonQuery(query, new object[] { madd, madiem, diachi, diemtq });
+            return dt > 0;
+;        }
     }
 }

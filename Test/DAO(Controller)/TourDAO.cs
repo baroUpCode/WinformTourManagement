@@ -23,15 +23,15 @@ namespace Test.DAO
         public DataTable GetListTour()
         {
             //DataTable dt = new DataTable();
-            string query = "select MaTour,HanhTrinh,LoTrinh,GiaTour,MaQuy,SoluongHientai, tr.TrangThai from TOUR t  Left Join  TrangThai tr on t.MaTrangThai=tr.MaTrangThai";
+            string query = "select MaTour,HanhTrinh,LoTrinh,GiaTour,MaQuy,SoluongHientai,NgayDi,NgayVe, tr.TrangThai from TOUR t  Left Join  TrangThai tr on t.MaTrangThai=tr.MaTrangThai";
             DataTable dt =  DataProvider.Instance.ExecuteQuery(query);
             return dt;
         }
         private TourDAO() { }
-        public bool InsertTour(string matour,string hanhtrinh,string lotrinh,float giatour, int maquy, int trangthai, int dadangky)
+        public bool InsertTour(string matour,string hanhtrinh,string lotrinh,float giatour, int maquy, int trangthai, int dadangky,DateTime NgayDi , DateTime NgayVe)
         {
-            string query = "insert dbo.TOUR(MaTour, HanhTrinh, LoTrinh, GiaTour, MaQuy, MaTrangThai , SoluongHientai) values( @matour , @hanhtrinh , @lotrinh , @giatour , @maquy , @trangthai , @dadangky )";/*, matour, hanhtrinh, lotrinh,giatour,maquy,matrangthai,soluonghientai);*//*"exec THEMTOUR @matour , @hanhtrinh , @lotrinh , @giatour , @maquy , @matrangthai , @soluonghientai ";*/
-            var result = DataProvider.Instance.ExecuteNonQuery(query,new object[] {matour,hanhtrinh,lotrinh,giatour,maquy,trangthai,dadangky});// bien tra ve kieu int, gia tri la so luong ca dong duoc them vao 
+            string query = "insert dbo.TOUR(MaTour, HanhTrinh, LoTrinh, GiaTour, MaQuy, MaTrangThai , SoluongHientai, NgayDi , NgayVe) values( @matour , @hanhtrinh , @lotrinh , @giatour , @maquy , @trangthai , @dadangky , @ngaydi , @ngayve )";/*, matour, hanhtrinh, lotrinh,giatour,maquy,matrangthai,soluonghientai);*//*"exec THEMTOUR @matour , @hanhtrinh , @lotrinh , @giatour , @maquy , @matrangthai , @soluonghientai ";*/
+            var result = DataProvider.Instance.ExecuteNonQuery(query,new object[] {matour,hanhtrinh,lotrinh,giatour,maquy,trangthai,dadangky,NgayDi,NgayVe});// bien tra ve kieu int, gia tri la so luong ca dong duoc them vao 
             //Tra ve true
             return result > 0;//result >0 == true , neu co 1 dong duoc them vao thanh cong thi result=1 va InsertTour() la true
         }
@@ -41,10 +41,10 @@ namespace Test.DAO
             var result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
-        public bool UpdateTour(string matour,string hanhtrinh, string lotrinh , float giatour, int maquy , int matrangthai , int dadangky )
+        public bool UpdateTour(string matour,string hanhtrinh, string lotrinh , float giatour, int maquy , int matrangthai , int dadangky,DateTime ngaydi , DateTime ngayve )
         {
-            string query = "exec SUATOUR @matour , @hanhtrinh , @lotrinh , @giatour , @maquy , @matrangthai , @dadangky";
-            var result = DataProvider.Instance.ExecuteNonQuery(query, new object[] {matour,hanhtrinh,lotrinh,giatour,maquy,matrangthai,dadangky});
+            string query = "exec SUATOUR @matour , @hanhtrinh , @lotrinh , @giatour , @maquy , @matrangthai , @dadangky , @ngaydi , @ngayve";
+            var result = DataProvider.Instance.ExecuteNonQuery(query, new object[] {matour,hanhtrinh,lotrinh,giatour,maquy,matrangthai,dadangky,ngaydi,ngayve});
             return result > 0;
         }
         //public DataTable GetTourByMaTour(string matour)
@@ -53,10 +53,10 @@ namespace Test.DAO
         //    DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] {matour});
         //    return dt;
         //}
-        public List<TourDTO> LoadTourList()
+        public List<TourDTO> LoadTourListDTO()
         {
             List<TourDTO> list = new List<TourDTO>();
-            string query = "exec GetlistTour";
+            string query = "Select * from TOUR";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow row in dt.Rows)
             {
@@ -92,7 +92,7 @@ namespace Test.DAO
             {
                 return true;
             }
-
+  
             else
             {
                 return false;

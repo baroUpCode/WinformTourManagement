@@ -26,5 +26,9 @@ namespace Test
         {
 
         }
+
+        private void btn_them_Click(object sender, EventArgs e)
+        {
+        }
     }
 }

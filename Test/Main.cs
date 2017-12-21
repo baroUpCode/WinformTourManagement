@@ -98,7 +98,7 @@ namespace Test
         void LoadTour()
         {
             //Tạo một biến danh sách đối tượng Tour để lưu lại các Tour có trong DB
-            List<TourDTO> tour = TourDAO.Instance.LoadTourList();
+            List<TourDTO> tour = TourDAO.Instance.LoadTourListDTO();
             //Duyệt qua danh sách và mỗi tour tạo một button 
             foreach (TourDTO item in tour)
             {
