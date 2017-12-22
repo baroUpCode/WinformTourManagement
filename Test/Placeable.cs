@@ -28,7 +28,7 @@ namespace Test
         {
             ClearText();
             txtMadd.Enabled = tag;
-            txtDienthoai.Enabled = tag;
+            txtDiachi.Enabled = tag;
             txtTendiem.Enabled = tag;
             cbxDiemdungchan.Enabled = tag;
             btnHuy.Enabled = tag;
@@ -45,15 +45,15 @@ namespace Test
         }
         void ClearText()
         {
-            txtDienthoai.Clear();
+            txtDiachi.Clear();
             txtMadd.Clear();
-            txtDienthoai.Clear();
+            txtDiachi.Clear();
             txtTendiem.Clear();
         }
 #endregion methods
 #region events
         private void btnThoat_Click(object sender, EventArgs e)
-        {
+        { 
             this.Close();
         }
 
@@ -74,15 +74,6 @@ namespace Test
                 txtTendiem.Focus();
             }
         }
-
-        private void txtDienthoai_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtDienthoai.Text.Trim()))
-            {
-                MessageBox.Show("Vui lòng nhập số điện thoại ! ", "Thông Báo");
-                txtDienthoai.Focus();
-            }
-        }
         private void cbxDiemdungchan_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(cbxDiemdungchan.Text.Trim()))
@@ -91,14 +82,6 @@ namespace Test
                 cbxDiemdungchan.Focus();
             }
         }
-        private void txtDienthoai_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
         #endregion events
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -129,6 +112,15 @@ namespace Test
         private void btnHuy_Click(object sender, EventArgs e)
         {
             DefaultText(false); 
+        }
+
+        private void txtDiachi_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtDiachi.Text.Trim()))
+            {
+                MessageBox.Show("Vui lòng nhập địa chỉ ! ", "Thông Báo");
+                txtDiachi.Focus();
+            }
         }
     }
 }

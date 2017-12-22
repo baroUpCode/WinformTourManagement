@@ -32,5 +32,17 @@ namespace Test.DAO_Controller_
             int dt = DataProvider.Instance.ExecuteNonQuery(query, new object[] { madd, madiem, diachi, diemtq });
             return dt > 0;
 ;        }
+        public bool UpdatePlaceable(string madd, string madiem, string diachi, string diemtq)
+        {
+            string query = "update dbo.DiaDiemTQ SET MaDiem = @madiem , DiaChi = @diachi , DiemTQ = @diemtq WHERE MaDD= @madd";
+            int dt = DataProvider.Instance.ExecuteNonQuery(query, new object[] { madiem, diachi, diemtq, madd });
+            return dt > 0;
+        }
+        public bool DeletePlaceable(string madd)
+        {
+            string query= "DELETE FROM dbo.DiaDiemTQ WHERE MADD = " + madd;
+            int dt = DataProvider.Instance.ExecuteNonQuery(query);
+            return dt > 0;
+        }
     }
 }
