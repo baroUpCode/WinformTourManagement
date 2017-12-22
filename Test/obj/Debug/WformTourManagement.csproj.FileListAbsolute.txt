@@ -6,8 +6,6 @@ D:\Git\WinformTourManagement\Test\obj\Debug\Test.Placeable.resources
 D:\Git\WinformTourManagement\Test\obj\Debug\Test.Hotel.resources
 D:\Git\WinformTourManagement\Test\obj\Debug\Test.Registration_Form__Details.resources
 D:\Git\WinformTourManagement\Test\obj\Debug\Test.Registration_Form.resources
-D:\Git\WinformTourManagement\Test\obj\Debug\Test.Seasioning_Prices.resources
-D:\Git\WinformTourManagement\Test\obj\Debug\Test.Service.resources
 D:\Git\WinformTourManagement\Test\obj\Debug\Test.Staff.resources
 D:\Git\WinformTourManagement\Test\obj\Debug\Test.The_Stop.resources
 D:\Git\WinformTourManagement\Test\obj\Debug\Test.Tour.resources

@@ -31,7 +31,6 @@
             this.KhuyenMaiTool = new System.Windows.Forms.ToolStripMenuItem();
             this.giáToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.GiaGocTool = new System.Windows.Forms.ToolStripMenuItem();
-            this.DichVuTool = new System.Windows.Forms.ToolStripMenuItem();
             this.KhachSanTool = new System.Windows.Forms.ToolStripMenuItem();
             this.TinhTool = new System.Windows.Forms.ToolStripMenuItem();
             this.kháchSạnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,46 +48,18 @@
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // KhuyenMaiTool
-            // 
-            this.KhuyenMaiTool.Name = "KhuyenMaiTool";
-            this.KhuyenMaiTool.Size = new System.Drawing.Size(137, 22);
-            this.KhuyenMaiTool.Text = "Khuyến Mãi";
-            this.KhuyenMaiTool.Click += new System.EventHandler(this.KhuyenMaiTool_Click_1);
-            // 
-            // giáToolStripMenuItem
-            // 
-            this.giáToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.GiaGocTool,
-            this.KhuyenMaiTool});
-            this.giáToolStripMenuItem.Name = "giáToolStripMenuItem";
-            this.giáToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.giáToolStripMenuItem.Text = "Bảng Giá";
-            // 
-            // GiaGocTool
-            // 
-            this.GiaGocTool.Name = "GiaGocTool";
-            this.GiaGocTool.Size = new System.Drawing.Size(137, 22);
-            this.GiaGocTool.Text = "Giá Gốc";
-            // 
-            // DichVuTool
-            // 
-            this.DichVuTool.Name = "DichVuTool";
-            this.DichVuTool.Size = new System.Drawing.Size(135, 22);
-            this.DichVuTool.Text = "Dịch Vụ";
-            this.DichVuTool.Click += new System.EventHandler(this.DichVuTool_Click_1);
-            // 
+        
             // KhachSanTool
             // 
             this.KhachSanTool.Name = "KhachSanTool";
-            this.KhachSanTool.Size = new System.Drawing.Size(135, 22);
+            this.KhachSanTool.Size = new System.Drawing.Size(152, 22);
             this.KhachSanTool.Text = "Khách Sạn";
             this.KhachSanTool.Click += new System.EventHandler(this.KhachSanTool_Click_1);
             // 
             // TinhTool
             // 
             this.TinhTool.Name = "TinhTool";
-            this.TinhTool.Size = new System.Drawing.Size(135, 22);
+            this.TinhTool.Size = new System.Drawing.Size(152, 22);
             this.TinhTool.Text = "Tỉnh Thành";
             this.TinhTool.Click += new System.EventHandler(this.TinhTool_Click_1);
             // 
@@ -96,8 +67,7 @@
             // 
             this.kháchSạnToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TinhTool,
-            this.KhachSanTool,
-            this.DichVuTool});
+            this.KhachSanTool});
             this.kháchSạnToolStripMenuItem.Name = "kháchSạnToolStripMenuItem";
             this.kháchSạnToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
             this.kháchSạnToolStripMenuItem.Text = "Điểm Dừng Chân";
@@ -213,7 +183,6 @@
         private System.Windows.Forms.ToolStripMenuItem KhuyenMaiTool;
         private System.Windows.Forms.ToolStripMenuItem giáToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem GiaGocTool;
-        private System.Windows.Forms.ToolStripMenuItem DichVuTool;
         private System.Windows.Forms.ToolStripMenuItem KhachSanTool;
         private System.Windows.Forms.ToolStripMenuItem TinhTool;
         private System.Windows.Forms.ToolStripMenuItem kháchSạnToolStripMenuItem;

@@ -75,25 +75,6 @@ namespace Test
         
             Hotel hotel = new Hotel();
             hotel.Show();
-        
-
-        }
-
-        private void DichVuTool_Click_1(object sender, EventArgs e)
-        {
-       
-            Service se = new Service();
-            se.Show();
-        
-
-        }
-
-        private void KhuyenMaiTool_Click_1(object sender, EventArgs e)
-        {
-        
-            Seasioning_Prices KM = new Seasioning_Prices();
-            KM.Show();
-        
         }
         void LoadTour()
         {

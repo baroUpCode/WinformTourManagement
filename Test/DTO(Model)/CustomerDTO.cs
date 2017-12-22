@@ -28,6 +28,11 @@ namespace Test.DTO_Model_
             this.DienThoai = dienthoai;
             this.NgaySinh = ngaysinh;
         }
+        /// <summary>
+        /// Chuyển đổi kiểu dữ liệu từ Table phía SQL thành kiểu đối tượng(Model) để View có thể dễ dàng lấy dữ liệu
+        /// Hàm Tour(DataRow row) là hàm khởi tạo để nhâm các giá trị từ table phía DAO về và chuyển thành Model
+        /// </summary>
+        /// <param name="row"></param>
         public CustomerDTO(DataRow r)
         {
             this.MaKH = r["MaKH"].ToString();

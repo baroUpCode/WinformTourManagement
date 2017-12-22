@@ -48,19 +48,25 @@ namespace Test.DAO_Controller_
         }
         public bool UpdateCustomer(string makh, string tenkh, string diachi,string dienthoai, DateTime ngaysinh)
         {
-            string query = "update dbo.Khachhang SET  ,TenKH= @tenkh, DiaChi = @diachi , Dienthoai = @dienthoai , NgaySinh= @ngaysinh WHERE MaKH= @makh";
+            string query = "update dbo.Khachhang SET TenKH= @tenkh , DiaChi = @diachi , Dienthoai = @dienthoai , NgaySinh= @ngaysinh WHERE MaKH = @makh ";
             int dt = DataProvider.Instance.ExecuteNonQuery(query, new object[] { tenkh, diachi, dienthoai, ngaysinh, makh });
             return dt > 0;
         }
-        public bool DeleteCustomer(int makh)
+        public bool DeleteCustomer(string makh)
         {
             string query = "DELETE FROM dbo.Khachhang WHERE  MaKH = " + makh;
             int dt = DataProvider.Instance.ExecuteNonQuery(query);
             return dt > 0;
         }
-        public DataTable GetCustomerByID(int makh)
+        public DataTable GetCustomerByID(string search)
         {
-            string query = "exec GetCustomerByID " + makh;
+            string query = string.Format("exec GetCustomerByID '{0}' ",search);
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            return dt;
+        }
+        public DataTable GetCustomerByPhone(string search)
+        {
+            string query = string.Format("exec GetCustomerByPhone '{0}' ",search);
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;
         }

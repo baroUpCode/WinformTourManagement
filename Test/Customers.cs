@@ -40,9 +40,32 @@ namespace Test
         }
         void UpdateCustomer()
         {
-
+            string makh = dtgvKhachhang.CurrentRow.Cells[0].Value.ToString();
+            string tenkh = txtTenkh.Text;
+            string diachi = txtDiachi.Text;
+            DateTime ngaysinh = dtpNgaysinh.Value;
+            string dienthoai = txtSodienthoai.Text.ToString();
+            if (CustomerDAO.Instance.UpdateCustomer(makh,tenkh, diachi, dienthoai, ngaysinh))
+            {
+                MessageBox.Show("Thông tin được sửa thành công", "Thông Báo");
+                DefaultDisableControls(true);
+            }
+            else
+                MessageBox.Show("Có lỗi xảy ra, vui lòng thử lại!", "Thông Báo");
         }
-        void DeleteCustomer() { }
+        void DeleteCustomer()
+        {
+            string makh = dtgvKhachhang.CurrentRow.Cells[0].Value.ToString();
+            if (CustomerDAO.Instance.DeleteCustomer(makh))
+            {
+                MessageBox.Show("Bạn có chắc muốn xóa ? ", "Thông Báo", MessageBoxButtons.OKCancel);
+                ClearText();
+                LoadCustomersList();
+                CustomerBinding();
+            }
+            else
+                MessageBox.Show("Có lỗi xảy ra, vui lòng thử lại!", "Thông Báo");
+        }
         void DefaultDisableControls(bool tag)
         {
             LoadCustomersList();
@@ -56,6 +79,8 @@ namespace Test
             dtpNgaysinh.Enabled = tag;
             btnLuu.Enabled = tag;
             btnHuy.Enabled = tag;
+            btnTimkiem.Enabled = !tag;
+            txtTimkiem.Enabled = !tag;
             btnXoa.Enabled = !tag;
             btnThem.Enabled = !tag;
             btnSua.Enabled = !tag;
@@ -91,16 +116,7 @@ namespace Test
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            int makh = Int32.Parse(dtgvKhachhang.CurrentRow.Cells[0].Value.ToString());
-            if (CustomerDAO.Instance.DeleteCustomer(makh))
-            {
-                MessageBox.Show("Bạn có chắc muốn xóa ? ", "Thông Báo", MessageBoxButtons.OKCancel);
-                ClearText();
-                LoadCustomersList();
-                CustomerBinding();
-            }
-            else
-                MessageBox.Show("Có lỗi xảy ra!", "Thông Báo");
+            DeleteCustomer();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -177,7 +193,11 @@ namespace Test
             }
         }
         #endregion keypress events
-
+        /// <summary>
+        /// Khi click vào btnTimkiem thì sẽ lấy chuỗi được nhập từ txtTimkiem để trả về 2 hàm tìm kiếm trong CustomerDAO để procedure, nếu tìm được id hoặc số điện thoại thì sẽ hiện ra dtgv
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnTimkiem_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtTimkiem.Text.Trim()))
@@ -186,16 +206,29 @@ namespace Test
             }
             else
             { 
-            int makh = Int32.Parse(txtTimkiem.Text);
-            var dt = CustomerDAO.Instance.GetCustomerByID(makh);
-            if (dt.Rows.Count > 0)
-            {
-                dtgvKhachhang.DataSource = dt;
-            }else
-            {
-                MessageBox.Show("Khách hàng không tồn tại!", "Thông Báo");
-                txtTimkiem.Focus();
-            }
+                string search =txtTimkiem.Text;
+                var id = CustomerDAO.Instance.GetCustomerByID(search);
+                //var phone = CustomerDAO.Instance.GetCustomerByPhone(search);
+                if (id.Rows.Count > 0)
+                {
+                    dtgvKhachhang.DataSource = id;
+                }
+                //else if (phone.Rows.Count > 0)
+                //{
+                //    dtgvKhachhang.DataSource = phone;
+                //}
+                else
+                {
+                    var phone = CustomerDAO.Instance.GetCustomerByPhone(search);
+                    if (phone.Rows.Count > 0)
+                    {
+                        dtgvKhachhang.DataSource = phone;
+                    }else
+                    {
+                        MessageBox.Show("Khách hàng không tồn tại!", "Thông Báo");
+                        txtTimkiem.Focus();
+                    }
+                }
             }
         }
         private void txtTimkiem_KeyPress(object sender, KeyPressEventArgs e)

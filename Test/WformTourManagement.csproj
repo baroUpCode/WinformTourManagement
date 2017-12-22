@@ -55,9 +55,11 @@
     <Compile Include="DAO%28Controller%29\AccountDAO.cs" />
     <Compile Include="DAO%28Controller%29\CustomerDAO.cs" />
     <Compile Include="DAO%28Controller%29\DataProvicder.cs" />
+    <Compile Include="DAO%28Controller%29\HotelDAO.cs" />
     <Compile Include="DAO%28Controller%29\PlaceableDAO.cs" />
     <Compile Include="DAO%28Controller%29\TourDAO.cs" />
     <Compile Include="DTO%28Model%29\CustomerDTO.cs" />
+    <Compile Include="DTO%28Model%29\HotelDTO.cs" />
     <Compile Include="DTO%28Model%29\TourDTO.cs" />
     <Compile Include="DTO%28Model%29\TrangThaiDTO.cs" />
     <Compile Include="Main.cs">
@@ -89,18 +91,6 @@
     </Compile>
     <Compile Include="Registration Form.Designer.cs">
       <DependentUpon>Registration Form.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Seasioning Prices.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Seasioning Prices.Designer.cs">
-      <DependentUpon>Seasioning Prices.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Service.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Service.Designer.cs">
-      <DependentUpon>Service.cs</DependentUpon>
     </Compile>
     <Compile Include="Staff.cs">
       <SubType>Form</SubType>
@@ -149,12 +139,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registration Form.resx">
       <DependentUpon>Registration Form.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Seasioning Prices.resx">
-      <DependentUpon>Seasioning Prices.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Service.resx">
-      <DependentUpon>Service.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>
