@@ -29,7 +29,7 @@ namespace Test.DAO_Controller_
         /// <returns></returns>
         public List<CustomerDTO> LoadCustomer()
         {
-            string query = "select * from Khachhang";
+            string query = "select * from KhachHang";
             List<CustomerDTO> list = new List<CustomerDTO>();
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             foreach(DataRow r in dt.Rows)
@@ -41,20 +41,19 @@ namespace Test.DAO_Controller_
         }
         public bool InsertCustomer(string tenkh, string diachi,string dienthoai, DateTime ngaysinh)
         {
-            string query = "insert dbo.Khachhang(TenKH, DiaChi, Dienthoai,NgaySinh) values( @tenkh , @diachi , @dienthoai , @ngaysinh )";
+            string query = "insert dbo.KhachHang(TenKH, DiaChi, Dienthoai,NgaySinh) values( @tenkh , @diachi , @dienthoai , @ngaysinh )";
             int dt = DataProvider.Instance.ExecuteNonQuery(query, new object[] {tenkh,diachi,dienthoai,ngaysinh });
             return dt > 0;
-            ;
         }
-        public bool UpdateCustomer(string makh, string tenkh, string diachi,string dienthoai, DateTime ngaysinh)
+        public bool UpdateCustomer(int makh, string tenkh, string diachi,string dienthoai, DateTime ngaysinh)
         {
-            string query = "update dbo.Khachhang SET TenKH= @tenkh , DiaChi = @diachi , Dienthoai = @dienthoai , NgaySinh= @ngaysinh WHERE MaKH = @makh ";
+            string query = " update dbo.KhachHang SET TenKH = @tenkh , DiaChi = @diachi , DienThoai = @dienthoai , NgaySinh = @ngaysinh WHERE MaKH = @makh ";
             int dt = DataProvider.Instance.ExecuteNonQuery(query, new object[] { tenkh, diachi, dienthoai, ngaysinh, makh });
             return dt > 0;
         }
-        public bool DeleteCustomer(string makh)
+        public bool DeleteCustomer(int makh)
         {
-            string query = "DELETE FROM dbo.Khachhang WHERE  MaKH = " + makh;
+            string query = string.Format("DELETE FROM dbo.KhachHang WHERE  MaKH = {0} ", makh);
             int dt = DataProvider.Instance.ExecuteNonQuery(query);
             return dt > 0;
         }

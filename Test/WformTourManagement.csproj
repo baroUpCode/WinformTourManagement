@@ -57,9 +57,12 @@
     <Compile Include="DAO%28Controller%29\DataProvicder.cs" />
     <Compile Include="DAO%28Controller%29\HotelDAO.cs" />
     <Compile Include="DAO%28Controller%29\PlaceableDAO.cs" />
+    <Compile Include="DAO%28Controller%29\StaffDAO.cs" />
+    <Compile Include="DAO%28Controller%29\TheStopDAO.cs" />
     <Compile Include="DAO%28Controller%29\TourDAO.cs" />
     <Compile Include="DTO%28Model%29\CustomerDTO.cs" />
     <Compile Include="DTO%28Model%29\HotelDTO.cs" />
+    <Compile Include="DTO%28Model%29\StaffDTO.cs" />
     <Compile Include="DTO%28Model%29\TourDTO.cs" />
     <Compile Include="DTO%28Model%29\TrangThaiDTO.cs" />
     <Compile Include="Main.cs">

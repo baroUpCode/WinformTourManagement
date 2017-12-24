@@ -56,5 +56,17 @@ namespace Test
                 //e.cancel you cannot inplement the event 
                 e.Cancel = true;
         }
+
+        private void txtMk_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.V)
+            {
+                e.SuppressKeyPress = true;
+            }
+            else
+            {
+                e.SuppressKeyPress = false;
+            }
+        }
     }
 }

@@ -99,7 +99,7 @@ namespace Test
         void DeleteHotel()
         {
             string maks = dtgvKhachsan.CurrentRow.Cells[0].Value.ToString();
-            if (CustomerDAO.Instance.DeleteCustomer(maks))
+            if (HotelDAO.Instance.DeleteHotel(maks))
             {
                 MessageBox.Show("Bạn có chắc muốn xóa ? ", "Thông Báo", MessageBoxButtons.OKCancel);
                 ClearText();

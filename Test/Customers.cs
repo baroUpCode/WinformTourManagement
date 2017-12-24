@@ -15,9 +15,11 @@ namespace Test
     {
         public Customers()
         {
+           
             InitializeComponent();
-
+            LoadCustomersList();
             DefaultDisableControls(false);
+
         }
         #region methods
         void LoadCustomersList()
@@ -40,22 +42,23 @@ namespace Test
         }
         void UpdateCustomer()
         {
-            string makh = dtgvKhachhang.CurrentRow.Cells[0].Value.ToString();
+            int makh = Int32.Parse(dtgvKhachhang.CurrentRow.Cells[0].Value.ToString());
             string tenkh = txtTenkh.Text;
             string diachi = txtDiachi.Text;
             DateTime ngaysinh = dtpNgaysinh.Value;
             string dienthoai = txtSodienthoai.Text.ToString();
-            if (CustomerDAO.Instance.UpdateCustomer(makh,tenkh, diachi, dienthoai, ngaysinh))
+            if (CustomerDAO.Instance.UpdateCustomer(makh,tenkh,diachi,dienthoai,ngaysinh))
             {
                 MessageBox.Show("Thông tin được sửa thành công", "Thông Báo");
                 DefaultDisableControls(true);
+                LoadCustomersList();
             }
             else
                 MessageBox.Show("Có lỗi xảy ra, vui lòng thử lại!", "Thông Báo");
         }
         void DeleteCustomer()
         {
-            string makh = dtgvKhachhang.CurrentRow.Cells[0].Value.ToString();
+            int makh = Int32.Parse(dtgvKhachhang.CurrentRow.Cells[0].Value.ToString());
             if (CustomerDAO.Instance.DeleteCustomer(makh))
             {
                 MessageBox.Show("Bạn có chắc muốn xóa ? ", "Thông Báo", MessageBoxButtons.OKCancel);
@@ -68,7 +71,7 @@ namespace Test
         }
         void DefaultDisableControls(bool tag)
         {
-            LoadCustomersList();
+            
             ClearText();
             CustomerBinding();
             txtDiachi.Enabled = tag;
@@ -104,6 +107,7 @@ namespace Test
             dtpNgaysinh.DataBindings.Add("Text", dtgvKhachhang.DataSource, "NgaySinh", true, DataSourceUpdateMode.Never);
         }
         #endregion methods
+
         #region events
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -111,34 +115,40 @@ namespace Test
             DefaultDisableControls(true);
             ClearText();
             dtgvKhachhang.Enabled = false;
-            btnThem.Enabled = true;
+            btnSua.Enabled = false;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
             DeleteCustomer();
         }
-
         private void btnSua_Click(object sender, EventArgs e)
         {
+            btnThem.Enabled = false;
             DefaultDisableControls(true);
-            btnSua.Enabled = true;
-        
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (btnSua.Enabled == true)
+            if (txtTenkh.Text == "" || dtpNgaysinh.Value >= DateTime.Now|| txtSodienthoai.Text == "" || txtDiachi.Text == "") 
             {
-                UpdateCustomer();
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin ! ", "Thông Báo");
+                txtTenkh.Focus();
             }
-            else if (btnThem.Enabled == true)
-            {
-                InsertCustomer();
-                dtgvKhachhang.Enabled = true;
+            else
+            { 
+                if (btnThem.Enabled == false)
+                {
+                    UpdateCustomer();
+                }
+                else if (btnSua.Enabled == false)
+                {
+                    InsertCustomer();
+                    dtgvKhachhang.Enabled = false;
+                }
+                LoadCustomersList();
+                DefaultDisableControls(false);
             }
-            DefaultDisableControls(false);
         }
-
         private void btnHuy_Click(object sender, EventArgs e)
         {
             DefaultDisableControls(false);
