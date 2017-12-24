@@ -73,7 +73,7 @@ namespace Test
             string diachi = txtDiachi.Text;
             string dienthoai = txtDienthoai.Text;
             string madiemdung = cbxMadiem.SelectedValue.ToString();
-            if (HotelDAO.Instance.InsertHotel(maks, tenks, dienthoai, diachi, madiemdung))
+            if (HotelDAO.Instance.InsertHotel(maks.ToUpper(), tenks, dienthoai, diachi, madiemdung))
             {
                 MessageBox.Show("Thêm thông tin khách hàng thành cồng", "Thông Báo");
                 DefaultDisableControls(true);
@@ -118,13 +118,16 @@ namespace Test
         #endregion methods
 
         #region events
-
-
         private void txtMaks_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtMaks.Text.Trim()))
             {
                 MessageBox.Show("Vui lòng nhập mã khách sạn! ", "Thông Báo");
+                txtMaks.Focus();
+            }
+            else if(HotelDAO.Instance.GetHotelByID(txtMaks.Text.ToUpper()).Rows.Count >= 1)
+            {
+                MessageBox.Show("Mã khách sạn đã tồn tại");
                 txtMaks.Focus();
             }
         }
@@ -146,6 +149,7 @@ namespace Test
         }
         private void txtDienthoai_KeyPress(object sender, KeyPressEventArgs e)
         {
+            txtDienthoai.MaxLength = 12;
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
@@ -153,7 +157,7 @@ namespace Test
         }
         private void txtDienthoai_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtDienthoai.Text.Trim()))
+            if (string.IsNullOrEmpty(txtDienthoai.Text.Trim()) || txtDienthoai.TextLength < 1)
             {
                 MessageBox.Show("Vui lòng nhập số điện thoại! ", "Thông Báo");
                 txtDienthoai.Focus();
@@ -178,17 +182,21 @@ namespace Test
         {
             DeleteHotel();
         }
-
         private void btnSua_Click(object sender, EventArgs e)
         {
             DefaultDisableControls(true);
             txtMaks.Enabled = false;
             dtgvKhachsan.Enabled = true;
             btnSua.Enabled = true;
-
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            if (txtMaks.Text==""||txtDiachi.Text == "" ||txtDienthoai.Text == "" || txtDiachi.Text == "" || Int32.Parse(txtDienthoai.Text) < 1)
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin ! ", "Thông Báo");
+                txtMaks.Focus();
+            }else
+            { 
             if (btnSua.Enabled == true)
             {
                 UpdateHotel();
@@ -199,6 +207,7 @@ namespace Test
                 dtgvKhachsan.Enabled = true;
             }
             DefaultDisableControls(false);
+            }
         }
         private void btnHuy_Click(object sender, EventArgs e)
         {
@@ -209,6 +218,12 @@ namespace Test
         {
             this.Close();
         }
+        private void txtMaks_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtMaks.MaxLength = 20;
+
+        }
+
     }
     #endregion events
 }

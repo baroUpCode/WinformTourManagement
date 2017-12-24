@@ -41,13 +41,13 @@ namespace Test.DAO_Controller_
         }
         public DataTable GetHotelByID(string search)
         {
-            string query = string.Format("exec GetHotelByID '{0}' ", search);
+            string query = "exec GetHotelByID " +search;
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;
         }
         public DataTable GetHotelByTheStop(string search)
         {
-            string query = string.Format("exec GetHotelByTheStop '{0}' ", search);
+            string query = "exec GetHotelByTheStop "+search;
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;
         }

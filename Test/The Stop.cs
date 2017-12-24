@@ -57,7 +57,7 @@ namespace Test
         {
             string madiem = txtMadiem.Text;
             string tendiem = txtTendiem.Text;
-            if (TheStopDAO.Instance.InsertTheStop(madiem, tendiem))
+            if (TheStopDAO.Instance.InsertTheStop(madiem.ToUpper(), tendiem))
             {
                 MessageBox.Show("Thêm thông tin khách hàng thành cồng", "Thông Báo");
                 DefaultDisableControls(true);
@@ -99,6 +99,11 @@ namespace Test
             if (string.IsNullOrEmpty(txtMadiem.Text))
             {
                 MessageBox.Show("Vui lòng nhập mã điểm", "Thông Báo");
+                txtMadiem.Focus();
+            }
+            else if (TheStopDAO.Instance.GetTheStopByID(txtMadiem.Text.ToUpper()).Rows.Count >= 1)
+            {
+                MessageBox.Show("Đã tồn tại mã tỉnh", "Thông Báo");
                 txtMadiem.Focus();
             }
         }

@@ -41,5 +41,11 @@ namespace Test.DAO_Controller_
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;
         }
+        public DataTable GetTheStopByID(string search)
+        {
+            string query = "select * from DiemDung where MaDiemDung = " +search;                
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            return dt;
+        }
     }
 }

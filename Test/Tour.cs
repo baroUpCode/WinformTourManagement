@@ -163,7 +163,7 @@ namespace Test
         void ThemTour()
         {
             int ngay = (dtpNgayve.Value.Day - dtpNgaydi.Value.Day);
-           string matour = txtMatour.Text.ToUpper();
+            string matour = txtMatour.Text;
            string hanhtrinh = string.Format("{0} ngày {1} đêm ", ngay, ngay - 1);
            string lotrinh = txtLotrinh.Text;
            float giatour = Convert.ToInt64(txtGiatour.Text);
@@ -172,7 +172,7 @@ namespace Test
            DateTime ngayve = dtpNgayve.Value;
            int trangthai = Int32.Parse(cbxTrangthai.SelectedValue.ToString());
            int dadangky = !string.IsNullOrEmpty(txtDadangky.Text)?Int32.Parse(txtDadangky.Text) : 0;
-           if (TourDAO.Instance.InsertTour(matour, hanhtrinh, lotrinh, giatour, maquy1, trangthai, dadangky,ngaydi,ngayve))
+           if (TourDAO.Instance.InsertTour(matour.ToUpper(), hanhtrinh, lotrinh, giatour, maquy1, trangthai, dadangky,ngaydi,ngayve))
                    {
                      MessageBox.Show("Thêm tour thành công", "Thông báo");
                    }
@@ -233,7 +233,6 @@ namespace Test
             else
                 MessageBox.Show("Có lỗi xảy ra!", "Thông Báo");
         }
-
         private void btnSua_Click(object sender, EventArgs e)
         {
 
@@ -246,13 +245,20 @@ namespace Test
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (txtMatour.Text == "" || txtLotrinh.Text == "" /*|| txtHanhtrinh.Text == ""*/ || txtGiatour.Text == "" || txtDadangky.Text == "")  /*||cbxMaquy.Text == "")*/
+            if (txtMatour.Text == "" || txtLotrinh.Text == "" /*|| txtHanhtrinh.Text == ""*/ || txtGiatour.Text == "" || txtDadangky.Text == "")    /*||cbxMaquy.Text == "")*/
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin ! ", "Thông Báo");
                 txtMatour.Focus();
             }
             else
             {
+                if (Int32.Parse(txtDadangky.Text) > 50)
+                {
+                    MessageBox.Show("Số lượng không được vượt quá 50 người! ", "Thông Báo");
+                    txtDadangky.Focus();
+                }
+                else
+                { 
                 if (btnSua.Enabled == false)
                 {
                     ThemTour();
@@ -263,8 +269,8 @@ namespace Test
                 }
                 LoadListTour();
                 DefaultControl();
+                }
             }
-         
         }
         /// <summary>
         /// Khi Hủy thì Load lại dtgvTour và set lại DefaultControl sau đó clear toàn bộ TextControl để trả về trạng thái Default
@@ -288,6 +294,7 @@ namespace Test
         /// <param name="e"></param>
         private void txtGiatour_KeyPress(object sender, KeyPressEventArgs e)
         {
+            txtGiatour.MaxLength = 7;
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
@@ -300,6 +307,7 @@ namespace Test
         /// <param name="e"></param>
         private void txtDadangky_KeyPress(object sender, KeyPressEventArgs e)
         {
+            txtDadangky.MaxLength = 2;
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
@@ -310,19 +318,7 @@ namespace Test
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void txtMatour_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtMatour.Text.Trim()))
-            {
-                MessageBox.Show("Vui lòng nhập mã tour ! ", "Thông Báo");
-                txtMatour.Focus();
-            }
-            if(TourDAO.Instance.GetMaTour(txtMatour.Text))
-            {
-                MessageBox.Show("Mã tour đã tồn tại", "Thông Báo");
-                txtMatour.Focus();
-            } 
-        }
+       
         /// <summary>
         /// Không được để trống khi change focus
         /// </summary>
@@ -399,6 +395,40 @@ namespace Test
                 MessageBox.Show("Ngày về không hợp lệ ! ", "Thông Báo");
                 dtpNgayve.Focus();
             }
+        }
+        private void txtMatour_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtMatour.Text.Trim()))
+            {
+                MessageBox.Show("Vui lòng nhập mã tour ! ", "Thông Báo");
+                txtMatour.Focus();
+            }
+            else if(TourDAO.Instance.GetTourByID(txtMatour.Text.ToUpper()).Rows.Count >=1)
+            {
+                MessageBox.Show("Mã tour đã tồn tại", "Thông Báo");
+                txtMatour.Focus();
+            }
+
+        }
+        /// <summary>
+        /// Độ dài tối đa có thể nhập vào là 5 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtMatour_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtMatour.MaxLength = 5;
+        }
+
+        private void txtDadangky_Leave(object sender, EventArgs e)
+        {
+           
+            //var sl = new TourDTO(TourDAO.Instance.GetMaTour(txtMatour.Text).Rows.Find("MaTour"));
+            //if (Int32.Parse(txtDadangky.Text) > (50-sl.SoLuongdangky))
+            //{
+            //    MessageBox.Show("Số lượng không được vượt quá 50! ", "Thông Báo");
+            //    txtDadangky.Focus();
+            //}
         }
         //private void cbxMaquy_KeyPress(object sender, KeyPressEventArgs e)
         //{

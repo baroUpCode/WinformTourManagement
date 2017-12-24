@@ -54,7 +54,7 @@
             // 
             this.dtpNgaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgaysinh.Location = new System.Drawing.Point(161, 71);
-            this.dtpNgaysinh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpNgaysinh.Margin = new System.Windows.Forms.Padding(4);
             this.dtpNgaysinh.Name = "dtpNgaysinh";
             this.dtpNgaysinh.Size = new System.Drawing.Size(265, 22);
             this.dtpNgaysinh.TabIndex = 51;
@@ -63,7 +63,7 @@
             // txtSodienthoai
             // 
             this.txtSodienthoai.Location = new System.Drawing.Point(560, 74);
-            this.txtSodienthoai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSodienthoai.Margin = new System.Windows.Forms.Padding(4);
             this.txtSodienthoai.Name = "txtSodienthoai";
             this.txtSodienthoai.Size = new System.Drawing.Size(192, 22);
             this.txtSodienthoai.TabIndex = 50;
@@ -73,7 +73,7 @@
             // txtDiachi
             // 
             this.txtDiachi.Location = new System.Drawing.Point(560, 34);
-            this.txtDiachi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDiachi.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiachi.Name = "txtDiachi";
             this.txtDiachi.Size = new System.Drawing.Size(192, 22);
             this.txtDiachi.TabIndex = 49;
@@ -82,10 +82,11 @@
             // txtTenkh
             // 
             this.txtTenkh.Location = new System.Drawing.Point(161, 34);
-            this.txtTenkh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTenkh.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenkh.Name = "txtTenkh";
             this.txtTenkh.Size = new System.Drawing.Size(265, 22);
             this.txtTenkh.TabIndex = 48;
+            this.txtTenkh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenkh_KeyPress);
             this.txtTenkh.Leave += new System.EventHandler(this.txtTenkh_Leave);
             // 
             // label6
@@ -131,7 +132,7 @@
             // btnThoat
             // 
             this.btnThoat.Location = new System.Drawing.Point(652, 114);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(100, 28);
             this.btnThoat.TabIndex = 41;
@@ -142,7 +143,7 @@
             // btnHuy
             // 
             this.btnHuy.Location = new System.Drawing.Point(536, 114);
-            this.btnHuy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(4);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(100, 28);
             this.btnHuy.TabIndex = 40;
@@ -153,7 +154,7 @@
             // btnLuu
             // 
             this.btnLuu.Location = new System.Drawing.Point(407, 114);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(100, 28);
             this.btnLuu.TabIndex = 39;
@@ -164,7 +165,7 @@
             // btnSua
             // 
             this.btnSua.Location = new System.Drawing.Point(279, 114);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(100, 28);
             this.btnSua.TabIndex = 38;
@@ -175,7 +176,7 @@
             // btnXoa
             // 
             this.btnXoa.Location = new System.Drawing.Point(161, 114);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(100, 28);
             this.btnXoa.TabIndex = 37;
@@ -186,7 +187,7 @@
             // btnThem
             // 
             this.btnThem.Location = new System.Drawing.Point(39, 114);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(100, 28);
             this.btnThem.TabIndex = 36;
@@ -199,7 +200,7 @@
             this.dtgvKhachhang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvKhachhang.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dtgvKhachhang.Location = new System.Drawing.Point(0, 203);
-            this.dtgvKhachhang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtgvKhachhang.Margin = new System.Windows.Forms.Padding(4);
             this.dtgvKhachhang.Name = "dtgvKhachhang";
             this.dtgvKhachhang.Size = new System.Drawing.Size(773, 166);
             this.dtgvKhachhang.TabIndex = 35;
@@ -218,7 +219,7 @@
             // btnTimkiem
             // 
             this.btnTimkiem.Location = new System.Drawing.Point(652, 167);
-            this.btnTimkiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTimkiem.Margin = new System.Windows.Forms.Padding(4);
             this.btnTimkiem.Name = "btnTimkiem";
             this.btnTimkiem.Size = new System.Drawing.Size(100, 26);
             this.btnTimkiem.TabIndex = 96;
@@ -229,7 +230,7 @@
             // txtTimkiem
             // 
             this.txtTimkiem.Location = new System.Drawing.Point(501, 169);
-            this.txtTimkiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTimkiem.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimkiem.Name = "txtTimkiem";
             this.txtTimkiem.Size = new System.Drawing.Size(143, 22);
             this.txtTimkiem.TabIndex = 94;
@@ -271,7 +272,7 @@
             this.Controls.Add(this.dtgvKhachhang);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Customers";
             this.Text = "Customers";
             ((System.ComponentModel.ISupportInitialize)(this.dtgvKhachhang)).EndInit();

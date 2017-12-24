@@ -196,6 +196,7 @@
             this.txtManhanvien.Name = "txtManhanvien";
             this.txtManhanvien.Size = new System.Drawing.Size(265, 22);
             this.txtManhanvien.TabIndex = 29;
+            this.txtManhanvien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtManhanvien_KeyPress);
             this.txtManhanvien.Leave += new System.EventHandler(this.txtManhanvien_Leave);
             // 
             // txtTennhanvien

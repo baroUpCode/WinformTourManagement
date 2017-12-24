@@ -80,8 +80,6 @@ namespace Test
             btnLuu.Enabled = tag;
             btnHuy.Enabled = tag;
             dtpNgaysinh.Enabled = tag;
-            btnLuu.Enabled = tag;
-            btnHuy.Enabled = tag;
             btnTimkiem.Enabled = !tag;
             txtTimkiem.Enabled = !tag;
             btnXoa.Enabled = !tag;
@@ -127,26 +125,40 @@ namespace Test
             btnThem.Enabled = false;
             DefaultDisableControls(true);
         }
+        /// <summary>
+        /// Khi bấm Lưu thì kiểm tra các textbox có trống hay không , sau đó kiểm tra số điện thoại nhập vào có trùng hay không và sau đó tiến hành thực hiện thêm sửa tương ứng.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (txtTenkh.Text == "" || dtpNgaysinh.Value >= DateTime.Now|| txtSodienthoai.Text == "" || txtDiachi.Text == "") 
+            if (txtTenkh.Text == "" || dtpNgaysinh.Value >= DateTime.Now|| txtSodienthoai.Text == "" || txtDiachi.Text == "" || Int32.Parse(txtSodienthoai.Text) < 1) 
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin ! ", "Thông Báo");
                 txtTenkh.Focus();
             }
             else
-            { 
-                if (btnThem.Enabled == false)
+            {
+                if (CustomerDAO.Instance.GetCustomerByPhone(txtSodienthoai.Text).Rows.Count > 0 )
                 {
-                    UpdateCustomer();
+                    MessageBox.Show("Số điện thoại đã tồn tại ! ", "Thông Báo");
+                    txtSodienthoai.Focus();
                 }
-                else if (btnSua.Enabled == false)
+                else
                 {
-                    InsertCustomer();
-                    dtgvKhachhang.Enabled = false;
+                    if (btnThem.Enabled == false)
+                    {
+                        UpdateCustomer();
+                    }
+                    else if (btnSua.Enabled == false)
+                    {
+                        InsertCustomer();
+                        dtgvKhachhang.Enabled = false;
+                    }
+                    LoadCustomersList();
+                    DefaultDisableControls(false);
                 }
-                LoadCustomersList();
-                DefaultDisableControls(false);
+              
             }
         }
         private void btnHuy_Click(object sender, EventArgs e)
@@ -179,7 +191,7 @@ namespace Test
         }
         private void txtSodienthoai_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtSodienthoai.Text.Trim()))
+            if (string.IsNullOrEmpty(txtSodienthoai.Text.Trim()) || txtSodienthoai.TextLength <1)
             {
                 MessageBox.Show("Vui lòng nhập số diện thoại! ", "Thông Báo");
                 txtSodienthoai.Focus();
@@ -197,6 +209,7 @@ namespace Test
         #region keypress events
         private void txtSodienthoai_KeyPress(object sender, KeyPressEventArgs e)
         {
+            txtSodienthoai.MaxLength = 12;
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
@@ -247,6 +260,11 @@ namespace Test
             {
                 e.Handled = true;
             }
+        }
+
+        private void txtTenkh_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtTenkh.MaxLength = 50;
         }
     }
 #endregion

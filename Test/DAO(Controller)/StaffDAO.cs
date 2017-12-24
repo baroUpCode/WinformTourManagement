@@ -52,13 +52,13 @@ namespace Test.DAO_Controller_
         }
         public DataTable GetStaffByID(string search)
         {
-            string query = string.Format("exec GetCustomerByID '{0}' ", search);
+            string query = "exec GetStaffByID "+search;
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;
         }
         public DataTable GetStaffByPhone(string search)
         {
-            string query = string.Format("exec GetCustomerByPhone '{0}' ", search);
+            string query ="exec GetStaffByPhone "+search;
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;
         }

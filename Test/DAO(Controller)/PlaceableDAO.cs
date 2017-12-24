@@ -22,20 +22,20 @@ namespace Test.DAO_Controller_
         private PlaceableDAO() { }
         public DataTable LoadPlaceableList()
         {
-            string query = "select * from DiemThamQuan";
+            string query = "select MaDTQ ,DiaChi,TenDTQ,dd.TenDiem from DiemThamQuan dtq left join DiemDung dd on dtq.MaDiemDung=dd.MaDiemDung";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;
         }
-        public bool InsertPlaceable(string madtq, string madiem , string diachi, string tendtq)
+        public bool InsertPlaceable(string madtq, string madiemdungchan , string diachi, string tendtq)
         {
-            string query = "insert dbo.DiemThamQuan(MaDTQ, MaDiemDung, DiaChi, TenDTQ) values( @madd , @madiem , @diachi , @diemtq )";
-            int dt = DataProvider.Instance.ExecuteNonQuery(query, new object[] { madtq, madiem, diachi, tendtq });
+            string query = "insert dbo.DiemThamQuan(MaDTQ, MaDiemDung, DiaChi, TenDTQ) values( @madd , @madiemdungchan , @diachi , @diemtq )";
+            int dt = DataProvider.Instance.ExecuteNonQuery(query, new object[] { madtq, madiemdungchan, diachi, tendtq });
             return dt > 0;
 ;        }
-        public bool UpdatePlaceable(string madtq, string madiem, string diachi, string tendtq)
+        public bool UpdatePlaceable(string madtq, string madiemdungchan, string diachi, string tendtq)
         {
-            string query = "update dbo.DiemThamQuan SET MaDiemDung = @madiem , DiaChi = @diachi , TenDTQ = @diemtq WHERE MaDTQ= @madd";
-            int dt = DataProvider.Instance.ExecuteNonQuery(query, new object[] { madiem, diachi, tendtq, madtq });
+            string query = "update dbo.DiemThamQuan SET MaDiemDung = @madiemdung , DiaChi = @diachi , TenDTQ = @diemtq WHERE MaDTQ= @madd";
+            int dt = DataProvider.Instance.ExecuteNonQuery(query, new object[] { madiemdungchan, diachi, tendtq, madtq });
             return dt > 0;
         }
         public bool DeletePlaceable(string madtq)

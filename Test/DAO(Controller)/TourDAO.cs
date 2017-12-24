@@ -83,20 +83,11 @@ namespace Test.DAO
             //}
             return dt;
         }
-        public bool GetMaTour(string id)
+        public DataTable GetTourByID(string id)
         {
-            string query = "select * from Tour where MaTour = @matour ";
-            List<TourDTO> dto = new List<TourDTO>();
-            DataTable dt = DataProvider.Instance.ExecuteQuery(query,new object[] { id });
-            if (dt.Rows.Count > 0)
-            {
-                return true;
-            }
-  
-            else
-            {
-                return false;
-            }
+            string query = "exec GetTourByID "+id;
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            return dt;
         }
     }
 }

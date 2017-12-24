@@ -27,12 +27,12 @@ namespace Test
         }
         void InsertStaff()
         {
-            string manv = txtManhanvien.Text;
+            string manv = txtManhanvien.Text.ToUpper();
             string tennv = txtTennhanvien.Text;
             string diachi = txtDiachi.Text;
             DateTime ngaysinh = DateTime.Parse(dtpNgaysinh.Value.ToShortDateString());
             string dienthoai = txtSodienthoai.Text.ToString();
-            if (StaffDAO.Instance.InsertStaff(manv,tennv, diachi, dienthoai, ngaysinh))
+            if (StaffDAO.Instance.InsertStaff(manv.ToUpper(),tennv, diachi, dienthoai, ngaysinh))
             {
                 MessageBox.Show("Thêm thông tin khách hàng thành cồng", "Thông Báo");
                 DefaultDisableControls(true);
@@ -137,25 +137,32 @@ namespace Test
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (txtManhanvien.Text=="" || txtTennhanvien.Text == "" || dtpNgaysinh.Value >= DateTime.Now || txtSodienthoai.Text == "" || txtDiachi.Text == "")
+            if (txtManhanvien.Text=="" || txtTennhanvien.Text == "" || dtpNgaysinh.Value >= DateTime.Now || txtSodienthoai.Text == "" || txtDiachi.Text == "" || Int32.Parse(txtSodienthoai.Text) < 1)
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin ! ", "Thông Báo");
                 txtManhanvien.Focus();
             }
             else
             {
-                if (btnThem.Enabled == false)
+                if (StaffDAO.Instance.GetStaffByPhone(txtSodienthoai.Text).Rows.Count > 0 )
                 {
-                    UpdateStaff();
+                    MessageBox.Show("Số điện thoại đã tồn tại ! ", "Thông Báo");
+                    txtSodienthoai.Focus();
                 }
-                else if (btnSua.Enabled == false)
+                else
                 {
-                    InsertStaff();
-                    dtgvNhanvien.Enabled = false;
+                    if (btnThem.Enabled == false)
+                    {
+                        UpdateStaff();
+                    }
+                    else if (btnSua.Enabled == false)
+                    {
+                        InsertStaff();
+                        dtgvNhanvien.Enabled = false;
+                    }
+                    DefaultDisableControls(false);
+                    LoadStaffList();
                 }
-                DefaultDisableControls(false);
-                LoadStaffList();
-                
             }
         }
 
@@ -174,6 +181,11 @@ namespace Test
             if (string.IsNullOrEmpty(txtManhanvien.Text.Trim()))
             {
                 MessageBox.Show("Vui lòng mã nhân viên ! ", "Thông Báo");
+                txtManhanvien.Focus();
+            }
+            else if (StaffDAO.Instance.GetStaffByID(txtManhanvien.Text.ToUpper()).Rows.Count >= 1)
+            {
+                MessageBox.Show("Mã nhân viên đã tồn tại!");
                 txtManhanvien.Focus();
             }
         }
@@ -208,7 +220,7 @@ namespace Test
 
         private void txtSodienthoai_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtSodienthoai.Text.Trim()))
+            if (string.IsNullOrEmpty(txtSodienthoai.Text.Trim())|| txtSodienthoai.SelectionLength <1 )
             {
                 MessageBox.Show("Vui lòng nhập số điện thoại! ", "Thông Báo");
                 txtSodienthoai.Focus();
@@ -217,7 +229,8 @@ namespace Test
 
         private void txtSodienthoai_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) /*&& char.MaxValue == '\uffffff'*/)
+            txtSodienthoai.MaxLength = 12;
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) || char.IsWhiteSpace(e.KeyChar)  /*&& char.MaxValue == '\uffffff'*/)
             {
                 e.Handled = true;
             }
@@ -258,5 +271,14 @@ namespace Test
         }
 
         #endregion events
+
+        private void txtManhanvien_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtManhanvien.MaxLength = 5;
+            if (char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

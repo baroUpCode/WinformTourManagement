@@ -71,6 +71,7 @@
             this.txtMatour.Name = "txtMatour";
             this.txtMatour.Size = new System.Drawing.Size(265, 22);
             this.txtMatour.TabIndex = 47;
+            this.txtMatour.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMatour_KeyPress);
             this.txtMatour.Leave += new System.EventHandler(this.txtMatour_Leave);
             // 
             // label4
@@ -248,6 +249,7 @@
             this.txtDadangky.Size = new System.Drawing.Size(230, 22);
             this.txtDadangky.TabIndex = 55;
             this.txtDadangky.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDadangky_KeyPress);
+            this.txtDadangky.Leave += new System.EventHandler(this.txtDadangky_Leave);
             // 
             // txtGiatour
             // 
