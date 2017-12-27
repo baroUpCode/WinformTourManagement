@@ -45,7 +45,7 @@ namespace Test.DTO_Model_
         /// Hàm Tour(DataRow row) là hàm khởi tạo để nhâm các giá trị từ table phía DAO về và chuyển thành Model
         /// </summary>
         /// <param name="row"></param>
-        public TourDTO(DataRow row)
+        public TourDTO(DataRow row=null)
         {
             this.MaTour = row["MaTour"].ToString();
             this.LoTrinh = row["LoTrinh"].ToString();
