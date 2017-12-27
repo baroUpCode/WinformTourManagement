@@ -69,6 +69,7 @@
     <Compile Include="DTO%28Model%29\CustomerDTO.cs" />
     <Compile Include="DTO%28Model%29\HotelDTO.cs" />
     <Compile Include="DTO%28Model%29\RegisterFormDTO.cs" />
+    <Compile Include="DTO%28Model%29\SelectedTourDTO.cs" />
     <Compile Include="DTO%28Model%29\StaffDTO.cs" />
     <Compile Include="DTO%28Model%29\TourDTO.cs" />
     <Compile Include="DTO%28Model%29\TrangThaiDTO.cs" />

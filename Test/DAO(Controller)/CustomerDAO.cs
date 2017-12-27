@@ -69,6 +69,17 @@ namespace Test.DAO_Controller_
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;
         }
+        public int GetMaxID()
+        {
+            try
+            { 
+            return (int)DataProvider.Instance.ExecuteScalar("select Max(MaKH) from dbo.KhachHang");
+            }
+            catch
+            {
+                return 1;
+            }
+        }
         #endregion methods
         //loaddtgv
         //insert update delete

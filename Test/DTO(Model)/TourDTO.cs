@@ -13,7 +13,7 @@ namespace Test.DTO_Model_
         private string hanhTrinh;
         private string loTrinh;
         private float giaTour;
-        private int soLuongdangky;
+        private int soluonghientai;
         private int maQuy;
         private DateTime ngayDi;
         private DateTime ngayVe;
@@ -21,14 +21,14 @@ namespace Test.DTO_Model_
         public string MaTour { get => maTour; set => maTour = value; }
         public string HanhTrinh { get => hanhTrinh; set => hanhTrinh = value; }
         public string LoTrinh { get => loTrinh; set => loTrinh = value; }
-        public int SoLuongdangky { get => soLuongdangky; set => soLuongdangky = value; }
+        public int SoluongHientai { get => soluonghientai; set => soluonghientai = value; }
         public float GiaTour { get => giaTour; set => giaTour = value; }
         public int MaQuy { get => maQuy; set => maQuy = value; }
         public int MaTrangthai { get => maTrangthai; set => maTrangthai = value; }
         public DateTime NgayDi { get => ngayDi; set => ngayDi = value; }
         public DateTime NgayVe { get => ngayVe; set => ngayVe = value; }
 
-        public TourDTO(string matour, string lotrinh, string hanhtrinh,float giatour,int maquy,int matrangthai,int soluongdangky,DateTime ngaydi, DateTime ngayve)
+        public TourDTO(string matour, string lotrinh, string hanhtrinh,float giatour,int maquy,int matrangthai,int soluonghientai, DateTime ngaydi, DateTime ngayve)
         {
             this.MaTour = matour;
             this.HanhTrinh = hanhtrinh;
@@ -36,7 +36,7 @@ namespace Test.DTO_Model_
             this.GiaTour = giatour;
             this.MaQuy = maquy;
             this.MaTrangthai = matrangthai;
-            this.SoLuongdangky = soluongdangky;
+            this.SoluongHientai = soluonghientai;
             this.NgayDi = ngaydi;
             this.NgayVe = ngayve;
         }
@@ -51,7 +51,7 @@ namespace Test.DTO_Model_
             this.LoTrinh = row["LoTrinh"].ToString();
             this.HanhTrinh = row["HanhTrinh"].ToString();
             this.GiaTour = Int64.Parse(row["GiaTour"].ToString());
-            this.SoLuongdangky = Int32.Parse(row["SoluongHientai"].ToString());
+            this.SoluongHientai = Int32.Parse(row["SoluongHientai"].ToString());
             this.MaTrangthai = Int32.Parse(row["MaTrangThai"].ToString());
             this.MaQuy = Int32.Parse(row["MaQuy"].ToString());
             this.NgayDi = DateTime.Parse(row["NgayDi"].ToString());

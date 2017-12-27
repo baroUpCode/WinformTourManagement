@@ -1,10 +1,10 @@
-alter proc proc_GetRegisDetailsByID
+﻿alter proc proc_GetRegisDetailsByID
 @mapdk char(5)
 as
-select  t.LoTrinh,t.HanhTrinh, c.MaTour,MaPDK,COUNT(c.SoluongDangky) as N'S� l??ng ??ng k�'
+select  t.LoTrinh,t.HanhTrinh, c.MaTour,MaPDK,t.GiaTour,COUNT(c.SoluongDangky) as N'Sô lượng đăng ký'
 from Chitiet_PhieuDangKy c ,Tour t
 where c.MaPDK= @mapdk and c.MaTour=t.MaTour
-Group By c.MaTour ,t.LoTrinh ,MaPDK
+Group By c.MaTour ,t.LoTrinh ,MaPDK,t.HanhTrinh,t.GiaTour
 
 exec proc_GetRegisDetailsByID @mapdk
 

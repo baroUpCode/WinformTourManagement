@@ -53,10 +53,23 @@ namespace Test.DAO
         //    DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] {matour});
         //    return dt;
         //}
+        public List<TourDTO> GetTourDTOByID(string id )
+        {
+            List<TourDTO> list = new List<TourDTO>();
+            string query = "Select * from Tour where MaTour = @matour";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] {id});
+            foreach (DataRow row in dt.Rows)
+            {
+                //Duyệt từng dòng và khởi tạo đối tượng model Tour để giữ dữ liệu từng dòng sau đó add vào danh sách các Tour
+                TourDTO tour = new TourDTO(row);
+                list.Add(tour);
+            }
+            return list;
+        }
         public List<TourDTO> LoadTourListDTO()
         {
             List<TourDTO> list = new List<TourDTO>();
-            string query = "Select * from Tour";
+            string query = "Select * from Tour ";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow row in dt.Rows)
             {
