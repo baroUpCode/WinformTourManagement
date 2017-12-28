@@ -57,6 +57,7 @@ namespace Test.DAO_Controller_
             int dt = DataProvider.Instance.ExecuteNonQuery(query);
             return dt > 0;
         }
+        
         public DataTable GetCustomerByID(string search)
         {
             string query = string.Format("exec GetCustomerByID '{0}' ",search);
@@ -69,17 +70,24 @@ namespace Test.DAO_Controller_
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;
         }
-        public int GetMaxID()
+        public DataTable GetMaxID()
         {
-            try
-            { 
-            return (int)DataProvider.Instance.ExecuteScalar("select Max(MaKH) from dbo.KhachHang");
-            }
-            catch
-            {
-                return 1;
-            }
+            string query = "select top 1 MaKH , TenKH,DiaChi,DienThoai,NgaySinh from dbo.KhachHang order by MaKH desc";
+            var dt = DataProvider.Instance.ExecuteQuery(query);
+            return dt;
         }
+        //public List<CustomerDTO> GetCusByMaxID()
+        //{
+        //    List<CustomerDTO> list = new List<CustomerDTO>();
+        //    string query = "select top 1 MaKH from dbo.KhachHang order by MaKH desc ";
+        //    var dt = DataProvider.Instance.ExecuteQuery(query);
+        //    foreach(DataRow r in dt.Rows)
+        //    {
+        //        CustomerDTO cus = new CustomerDTO(r);
+        //        list.Add(cus);
+        //    }
+        //    return list;
+        //}
         #endregion methods
         //loaddtgv
         //insert update delete

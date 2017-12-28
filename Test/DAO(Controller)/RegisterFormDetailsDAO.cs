@@ -46,7 +46,7 @@ namespace Test.DAO_Controller_
         //Xoa thong tin cua tour ra khoi phieu dang ky 
         public bool DeleteRegisFormDetails(string maphieu,string matour)
         {
-            string query = "delete from Chitiet_PhieuDangKy where MaPDK = @mapdk and MaTour =@matour ";
+            string query = "delete from Chitiet_PhieuDangKy where MaPDK = @mapdk and MaTour = @matour ";
             var dt = DataProvider.Instance.ExecuteNonQuery(query,new object[] {maphieu,matour });
             return dt > 0;
         }

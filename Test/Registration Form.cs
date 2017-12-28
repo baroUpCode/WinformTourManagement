@@ -21,6 +21,8 @@ namespace Test
             
             InitializeComponent();
             dtgvKhachhang.Enabled = false;
+            btnThemtour.Enabled = false;
+            btnLuu.Enabled = false;
             DefaultDisableControls(false);
         }
         #region methods
@@ -30,7 +32,7 @@ namespace Test
             cbxTour.DisplayMember = "LoTrinh";
             cbxTour.ValueMember = "MaTour";
         }
-        void DisableControlsAfterInsert(bool tag)
+        void EnableControlsAfterInsert(bool tag)
         {
             txtMaphieu.Enabled = tag;
             txtTenkh.Enabled = tag;
@@ -41,11 +43,11 @@ namespace Test
         }
         void DefaultDisableControls(bool tag)
         {
+           
             ClearText();
             LoadComboboxTour();
-            btnXoatour.Enabled = tag;
-            txtSoluong.Enabled = tag;
-            btnThemtour.Enabled = !tag;
+            btnXoatour.Enabled = false ;
+            //txtSoluong.Enabled = tag;
             dtpNgaysinh.MaxDate = DateTime.Now.AddDays(-1);
         }
         void ClearText()
@@ -60,6 +62,7 @@ namespace Test
             txtTimkiem.Clear();
             dtgvKhachhang.DataSource = null;
             dtgvKhachhang.Refresh();
+            listvTourdachon.Items.Clear();
         }
         void CustomerBinding()
         {
@@ -84,7 +87,7 @@ namespace Test
         private void btnHuy_Click(object sender, EventArgs e)
         {
             DefaultDisableControls(false);
-            DisableControlsAfterInsert(true);
+            EnableControlsAfterInsert(true);
             ClearText();
         }
 
@@ -129,6 +132,12 @@ namespace Test
             }
             else
             {
+                if (string.IsNullOrEmpty(txtMaphieu.Text))
+                {
+                    MessageBox.Show("Vui lòng nhập mã phiếu đăng ký ");
+                    txtMaphieu.Focus();
+                }
+                else { 
                 txtMaphieu.Enabled = false;
                 txtTenkh.Enabled = false;
                 dtpNgaysinh.Enabled = false;
@@ -140,21 +149,23 @@ namespace Test
                 if (id.Rows.Count > 0)
                 {
                     dtgvKhachhang.DataSource = id;
-                }
+                }   
                 else
                 {
                     var phone = CustomerDAO.Instance.GetCustomerByPhone(search);
                     if (phone.Rows.Count > 0)
                     {
                         dtgvKhachhang.DataSource = phone;
-                    }
+                            CustomerBinding();
+                        }
                     else
                     {
                         MessageBox.Show("Khách hàng không tồn tại!", "Thông Báo");
                         txtTimkiem.Focus();
                     }
                 }
-                CustomerBinding();
+              
+                }
             }
         }
       /// <summary>
@@ -169,22 +180,22 @@ namespace Test
         {
             if (string.IsNullOrEmpty(txtMaphieu.Text))
             {
-                MessageBox.Show("Vui lòng nhập số lượng.");
+                MessageBox.Show("Vui lòng nhập mã phiếu.");
                 txtSoluong.Focus();
             }
             else if (string.IsNullOrEmpty(txtTenkh.Text))
             {
-                MessageBox.Show("Vui lòng tên khách hàng.");
+                MessageBox.Show("Vui lòng nhập tên khách hàng.");
                 txtTenkh.Focus();
             }
             else if (dtpNgaysinh.Value >= DateTime.Now)
             {
-                MessageBox.Show("Vui lòng ngày sinh.");
+                MessageBox.Show("Vui lòng nhập ngày sinh.");
                 dtpNgaysinh.Focus();
             }
             else if (string.IsNullOrEmpty(txtDiachi.Text))
             {
-                MessageBox.Show("Vui lòng địa chỉ.");
+                MessageBox.Show("Vui lòng nhập địa chỉ.");
                 txtDiachi.Focus();
             }
             else if (string.IsNullOrEmpty(txtSodienthoai.Text))
@@ -202,12 +213,16 @@ namespace Test
                     DateTime ngaysinh = DateTime.Parse((dtpNgaysinh.Value.ToShortDateString()));
                     if (CustomerDAO.Instance.InsertCustomer(tenkh, diachi, dienthoai, ngaysinh))
                     {
+                        dtgvKhachhang.DataSource =/* CustomerDAO.Instance.GetCustomerByID(*/CustomerDAO.Instance.GetMaxID();
+                        int makh = Int32.Parse(dtgvKhachhang.Rows[0].Cells[0].Value.ToString());
                         string mapdk = txtMaphieu.Text;
                         //Lỗi makh 
-                        int makh = CustomerDAO.Instance.GetMaxID();
+                        //int makh = CustomerDAO.Instance.GetMaxID();
                         if (RegisterFormDAO.Instance.InsertRegisForm(mapdk.ToUpper(), makh))
                         {
                             MessageBox.Show("Tạo phiếu đăng ký thành công,vui lòng chọn tour!");
+                            EnableControlsAfterInsert(false);
+                            btnThemtour.Enabled = true;
                             cbxTour.Focus();
                         }
                         else
@@ -224,7 +239,10 @@ namespace Test
                     if (RegisterFormDAO.Instance.InsertRegisForm(mapdk.ToUpper(), makh))
                     {
                         MessageBox.Show("Tạo phiếu đăng ký thành công,vui lòng chọn tour!");
+                        EnableControlsAfterInsert(false);
+                        btnThemtour.Enabled = true;
                         cbxTour.Focus();
+
                     }
                 }
                 else
@@ -246,18 +264,37 @@ namespace Test
             List<TourDTO> list = TourDAO.Instance.GetTourDTOByID(cbxTour.SelectedValue.ToString());
             foreach (TourDTO item in list)
             {
-                    if(Int32.Parse(txtSoluong.Text) > item.SoluongHientai)
+                    if(Int32.Parse(txtSoluong.Text) > (50-item.SoluongHientai))
                     {
                         MessageBox.Show("Số lượng đăng ký vượt quá số chỗ còn lại, vui lòng chọn tour khác hoặc nhập lại số lượng!");
                         txtSoluong.Focus();
-                    }else
-                    { 
-                ListViewItem lst = new ListViewItem(item.MaTour.ToString());
-                lst.SubItems.Add(item.LoTrinh.ToString());
-                lst.SubItems.Add(item.HanhTrinh.ToString());
-                lst.SubItems.Add(item.GiaTour.ToString());
-                lst.SubItems.Add(txtSoluong.Text);
-                listvTourdachon.Items.Add(lst);
+                    }else if((50 - Int32.Parse(item.SoluongHientai.ToString())) <= 0  )
+                        {
+                        MessageBox.Show("Số lượng đăng ký vượt quá số chỗ còn lại, vui lòng chọn tour khác hoặc nhập lại số lượng!");
+                        cbxTour.Focus();
+                    }
+                    else
+                    {
+                        if (RegisterFormDetailsDAO.Instance.InsertRegisFormDetails(cbxTour.SelectedValue.ToString(), txtMaphieu.Text, Int32.Parse(txtSoluong.Text)))
+                        {
+                            MessageBox.Show("Tour được thêm thành công");
+                            ListViewItem lst = new ListViewItem(item.LoTrinh);
+                        lst.SubItems.Add(item.HanhTrinh);
+                        lst.SubItems.Add(item.GiaTour.ToString());
+                        lst.SubItems.Add(txtSoluong.Text);
+                        lst.SubItems.Add(item.NgayDi.ToShortDateString());
+                        lst.SubItems.Add(item.NgayVe.ToShortDateString());
+                        lst.SubItems.Add(item.MaTour);
+                        listvTourdachon.Items.Add(lst);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Có lỗi xảy ra vui lòng thử lại !");
+                            cbxTour.Focus();
+                        }
+                        btnXoatour.Enabled = true;
+                        txtSoluong.Clear();
+
                     }
                 }
             }
@@ -280,38 +317,111 @@ namespace Test
             List<TourDTO> list = TourDAO.Instance.GetTourDTOByID(id);
             foreach (TourDTO item in list)
             {
-                if (item.SoluongHientai >= 50)
+                if (item.SoluongHientai >= 50 || (50-item.SoluongHientai) <=0)
                 {
                     listvThongtintour.Enabled = false;
+                    txtSoluong.Enabled = false;
                 }
                 else if (item.SoluongHientai <50) 
                 {
                     listvThongtintour.Enabled = true;
+                    txtSoluong.Enabled = true;
                 }
                 listvThongtintour.Items.Clear();
                 ListViewItem lst = new ListViewItem(item.LoTrinh.ToString());
                 lst.SubItems.Add(item.HanhTrinh.ToString());
                 lst.SubItems.Add(item.GiaTour.ToString());
                 lst.SubItems.Add((50-item.SoluongHientai).ToString());
+                lst.SubItems.Add(item.NgayDi.ToShortDateString());
+                lst.SubItems.Add(item.NgayVe.ToShortDateString());
+                lst.SubItems.Add(item.MaTour);
                 listvThongtintour.Items.Add(lst);
             }
         }
 
         private void txtSoluong_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtSoluong.Text))
+
+           if (string.IsNullOrEmpty(txtSoluong.Text))
             {
                 MessageBox.Show("Vui lòng nhập số lượng");
                 txtSoluong.Focus();
             }
         }
-
-
-        #endregion events
-
         private void btnXoatour_Click(object sender, EventArgs e)
         {
+            if (listvTourdachon.SelectedItems.Count == 0)
+                return;
+            ListViewItem item = listvTourdachon.SelectedItems[0];
+            if (RegisterFormDetailsDAO.Instance.DeleteRegisFormDetails(txtMaphieu.Text, item.SubItems[6].Text)){
+                MessageBox.Show("yeah ya huuuu");
+                listvTourdachon.Items.Remove(item);
+            }
+        }
+        private void txtMaphieu_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtMaphieu.Text))
+            {
+                MessageBox.Show("Vui lòng nhập mã phiếu.");
+                txtMaphieu.Focus();
+            }
+        }
+       
+
+        private void btnSuatour_Click(object sender, EventArgs e)
+        {
+            btnLuu.Enabled = true;
+            cbxTour.Enabled = false;
+            btnThemtour.Enabled = false;
+            listvThongtintour.Enabled = false;
+            ListViewItem item = listvTourdachon.SelectedItems[0];
+            txtSoluong.Text = item.SubItems[3].Text;
 
         }
+
+        private void txtMaphieu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtMaphieu.MaxLength = 5;
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            ListViewItem item = listvTourdachon.SelectedItems[0];
+            if (RegisterFormDetailsDAO.Instance.UpdateRegisFormDetails(item.SubItems[6].Text, txtMaphieu.Text, Int32.Parse(txtSoluong.Text)))
+            {
+                MessageBox.Show("Số lượng được cập nhật thành công.");
+                cbxTour.Enabled = true;
+                btnThemtour.Enabled = true;
+                listvThongtintour.Enabled = true;
+                btnLuu.Enabled = false;
+            }
+            LoadSelectedTourList(txtMaphieu.Text);
+
+        }
+        /// <summary>
+        /// Load lại listview tour đã chọn khi đã sửa 
+        /// </summary>
+        /// <param name="mapdk"></param>
+        void LoadSelectedTourList(string mapdk)
+        {
+            listvTourdachon.Items.Clear();
+            List<RegisterFormDetailsDTO> dt =RegisterFormDetailsDAO.Instance.GetRegisDetailsByID(mapdk);
+            foreach(RegisterFormDetailsDTO re in dt)
+            {
+                List<TourDTO> listtour = TourDAO.Instance.GetTourDTOByID(re.MaTour);
+                foreach(TourDTO item in listtour)
+                {
+                    ListViewItem lst = new ListViewItem(item.LoTrinh.ToString());
+                    lst.SubItems.Add(item.HanhTrinh.ToString());
+                    lst.SubItems.Add(item.GiaTour.ToString());
+                    lst.SubItems.Add((50 - item.SoluongHientai).ToString());
+                    lst.SubItems.Add(item.NgayDi.ToShortDateString());
+                    lst.SubItems.Add(item.NgayVe.ToShortDateString());
+                    lst.SubItems.Add(item.MaTour);
+                    listvTourdachon.Items.Add(lst);
+                }
+            }
+        }
+        #endregion events
     }
 }
