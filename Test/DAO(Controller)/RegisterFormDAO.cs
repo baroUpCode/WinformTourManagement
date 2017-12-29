@@ -43,5 +43,11 @@ namespace Test.DAO_Controller_
             int dt = DataProvider.Instance.ExecuteNonQuery(query);
             return dt > 0;
         }
+        public bool GetRegisFormByID(string id)
+        {
+            string query = "select * from PhieuDangKyTour where MaPDK = @maphieu ";
+            int dt = DataProvider.Instance.ExecuteNonQuery(query,new object[] {id});
+            return dt > 0;
+        }
     }
 }

@@ -70,8 +70,8 @@
             this.soluongdangky = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ngaydi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ngayve = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnSuatour = new System.Windows.Forms.Button();
             this.matour = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnSuatour = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -150,6 +150,7 @@
             this.txtMaphieu.TabIndex = 82;
             this.txtMaphieu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaphieu_KeyPress);
             this.txtMaphieu.Leave += new System.EventHandler(this.txtMaphieu_Leave);
+            this.txtMaphieu.Validated += new System.EventHandler(this.txtMaphieu_Validated);
             // 
             // btnThemtour
             // 
@@ -263,6 +264,7 @@
             this.txtSodienthoai.Size = new System.Drawing.Size(159, 22);
             this.txtSodienthoai.TabIndex = 60;
             this.txtSodienthoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSodienthoai_KeyPress);
+            this.txtSodienthoai.Validated += new System.EventHandler(this.txtSodienthoai_Validated);
             // 
             // txtDiachi
             // 
@@ -483,6 +485,10 @@
             this.ngayve.Text = "Ngày về";
             this.ngayve.Width = 120;
             // 
+            // matour
+            // 
+            this.matour.Text = "Mã Tour";
+            // 
             // btnSuatour
             // 
             this.btnSuatour.Location = new System.Drawing.Point(950, 367);
@@ -493,10 +499,6 @@
             this.btnSuatour.Text = "Sửa Tour";
             this.btnSuatour.UseVisualStyleBackColor = true;
             this.btnSuatour.Click += new System.EventHandler(this.btnSuatour_Click);
-            // 
-            // matour
-            // 
-            this.matour.Text = "Mã Tour";
             // 
             // btnLuu
             // 

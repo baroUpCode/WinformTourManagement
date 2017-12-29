@@ -53,8 +53,8 @@ namespace Test.DAO_Controller_
         public List<RegisterFormDetailsDTO> GetRegisDetailsByID(string mapdk)
         {
             List<RegisterFormDetailsDTO> list = new List<RegisterFormDetailsDTO>();
-            string query = "exec proc_GetRegisDetailsByID "+mapdk;
-            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            string query = "exec proc_GetRegisDetailsByID @mapdk ";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query,new object[] {mapdk });
             foreach(DataRow r in dt.Rows)
             {
                 RegisterFormDetailsDTO re = new RegisterFormDetailsDTO(r);

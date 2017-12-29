@@ -36,7 +36,7 @@ namespace Test.DTO_Model_
         {
             this.MaPhieu = r["MaPDK"].ToString();
             this.MaTour = r["MaTour"].ToString();
-            this.SoLuong = Int32.Parse(r["Sô lượng đăng ký"].ToString());
+            this.SoLuong = Int32.Parse(r["SoluongDangKy"].ToString());
             //this.LoTrinh = r["LoTrinh"].ToString();
             //this.HanhTrinh = r["HanhTrinh"].ToString();
             //this.GiaTour = Int32.Parse(r["GiaTour"].ToString());

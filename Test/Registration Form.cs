@@ -149,6 +149,8 @@ namespace Test
                 if (id.Rows.Count > 0)
                 {
                     dtgvKhachhang.DataSource = id;
+                        CustomerBinding();
+                        txtTimkiem.Clear();
                 }   
                 else
                 {
@@ -157,6 +159,7 @@ namespace Test
                     {
                         dtgvKhachhang.DataSource = phone;
                             CustomerBinding();
+                            txtTimkiem.Clear();
                         }
                     else
                     {
@@ -275,7 +278,7 @@ namespace Test
                     }
                     else
                     {
-                        if (RegisterFormDetailsDAO.Instance.InsertRegisFormDetails(cbxTour.SelectedValue.ToString(), txtMaphieu.Text, Int32.Parse(txtSoluong.Text)))
+                        if (RegisterFormDetailsDAO.Instance.InsertRegisFormDetails(cbxTour.SelectedValue.ToString(), txtMaphieu.Text.ToUpper(), Int32.Parse(txtSoluong.Text)))
                         {
                             MessageBox.Show("Tour được thêm thành công");
                             ListViewItem lst = new ListViewItem(item.LoTrinh);
@@ -354,7 +357,7 @@ namespace Test
                 return;
             ListViewItem item = listvTourdachon.SelectedItems[0];
             if (RegisterFormDetailsDAO.Instance.DeleteRegisFormDetails(txtMaphieu.Text, item.SubItems[6].Text)){
-                MessageBox.Show("yeah ya huuuu");
+                MessageBox.Show("Tour đã được xóa .");
                 listvTourdachon.Items.Remove(item);
             }
         }
@@ -365,17 +368,25 @@ namespace Test
                 MessageBox.Show("Vui lòng nhập mã phiếu.");
                 txtMaphieu.Focus();
             }
+
         }
        
 
         private void btnSuatour_Click(object sender, EventArgs e)
         {
-            btnLuu.Enabled = true;
+         
+            if (listvTourdachon.SelectedItems.Count == 0 ) {
+                MessageBox.Show("Vui lòng chọn tour muốn sửa.");
+                listvTourdachon.Focus();
+            }
+            else {
+                ListViewItem item = listvTourdachon.SelectedItems[0];
+                btnLuu.Enabled = true;
             cbxTour.Enabled = false;
             btnThemtour.Enabled = false;
             listvThongtintour.Enabled = false;
-            ListViewItem item = listvTourdachon.SelectedItems[0];
             txtSoluong.Text = item.SubItems[3].Text;
+            }
 
         }
 
@@ -387,15 +398,16 @@ namespace Test
         private void btnLuu_Click(object sender, EventArgs e)
         {
             ListViewItem item = listvTourdachon.SelectedItems[0];
-            if (RegisterFormDetailsDAO.Instance.UpdateRegisFormDetails(item.SubItems[6].Text, txtMaphieu.Text, Int32.Parse(txtSoluong.Text)))
+            if (RegisterFormDetailsDAO.Instance.UpdateRegisFormDetails(item.SubItems[6].Text,txtMaphieu.Text.ToUpper(), Int32.Parse(txtSoluong.Text)))
             {
                 MessageBox.Show("Số lượng được cập nhật thành công.");
                 cbxTour.Enabled = true;
                 btnThemtour.Enabled = true;
                 listvThongtintour.Enabled = true;
                 btnLuu.Enabled = false;
+                LoadSelectedTourList(txtMaphieu.Text.ToUpper());
             }
-            LoadSelectedTourList(txtMaphieu.Text);
+          
 
         }
         /// <summary>
@@ -406,7 +418,7 @@ namespace Test
         {
             listvTourdachon.Items.Clear();
             List<RegisterFormDetailsDTO> dt =RegisterFormDetailsDAO.Instance.GetRegisDetailsByID(mapdk);
-            foreach(RegisterFormDetailsDTO re in dt)
+            foreach (RegisterFormDetailsDTO re in dt)
             {
                 List<TourDTO> listtour = TourDAO.Instance.GetTourDTOByID(re.MaTour);
                 foreach(TourDTO item in listtour)
@@ -414,7 +426,7 @@ namespace Test
                     ListViewItem lst = new ListViewItem(item.LoTrinh.ToString());
                     lst.SubItems.Add(item.HanhTrinh.ToString());
                     lst.SubItems.Add(item.GiaTour.ToString());
-                    lst.SubItems.Add((50 - item.SoluongHientai).ToString());
+                    lst.SubItems.Add(re.SoLuong.ToString());
                     lst.SubItems.Add(item.NgayDi.ToShortDateString());
                     lst.SubItems.Add(item.NgayVe.ToShortDateString());
                     lst.SubItems.Add(item.MaTour);
@@ -422,6 +434,25 @@ namespace Test
                 }
             }
         }
+        private void txtSodienthoai_Validated(object sender, EventArgs e)
+        {
+            if (CustomerDAO.Instance.GetCustomerByPhone(txtSodienthoai.Text).Rows.Count > 0)
+            {
+                MessageBox.Show("Số điện thoại đã tồn tại ");
+                txtSodienthoai.Clear();
+                txtSodienthoai.Focus();
+            }
+        }
         #endregion events
+
+        private void txtMaphieu_Validated(object sender, EventArgs e)
+        {
+           if (RegisterFormDAO.Instance.GetRegisFormByID(txtMaphieu.Text.ToUpper()))
+            {
+                MessageBox.Show("Mã phiếu đã tồn tại.");
+                txtMaphieu.Clear();
+                txtMaphieu.Focus();
+            }
+        }
     }
 }
