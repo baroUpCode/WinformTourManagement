@@ -278,17 +278,11 @@ namespace Test
                     }
                     else
                     {
-                        if (RegisterFormDetailsDAO.Instance.InsertRegisFormDetails(cbxTour.SelectedValue.ToString(), txtMaphieu.Text.ToUpper(), Int32.Parse(txtSoluong.Text)))
+                        if (RegisterFormDetailsDAO.Instance.InsertRegisFormDetails(cbxTour.SelectedValue.ToString().ToUpper(), txtMaphieu.Text.ToUpper(), Int32.Parse(txtSoluong.Text)))
                         {
-                            MessageBox.Show("Tour được thêm thành công");
-                            ListViewItem lst = new ListViewItem(item.LoTrinh);
-                        lst.SubItems.Add(item.HanhTrinh);
-                        lst.SubItems.Add(item.GiaTour.ToString());
-                        lst.SubItems.Add(txtSoluong.Text);
-                        lst.SubItems.Add(item.NgayDi.ToShortDateString());
-                        lst.SubItems.Add(item.NgayVe.ToShortDateString());
-                        lst.SubItems.Add(item.MaTour);
-                        listvTourdachon.Items.Add(lst);
+                                LoadSelectedTourList(txtMaphieu.Text.ToUpper());
+                                LoadListviewThongtintour(cbxTour.SelectedValue.ToString().ToUpper(),Int32.Parse(txtSoluong.Text));
+                                MessageBox.Show("Tour được thêm thành công");
                         }
                         else
                         {
@@ -358,7 +352,9 @@ namespace Test
             ListViewItem item = listvTourdachon.SelectedItems[0];
             if (RegisterFormDetailsDAO.Instance.DeleteRegisFormDetails(txtMaphieu.Text, item.SubItems[6].Text)){
                 MessageBox.Show("Tour đã được xóa .");
+                LoadListviewThongtintour(item.SubItems[6].Text,-Int32.Parse(item.SubItems[3].Text));
                 listvTourdachon.Items.Remove(item);
+                
             }
         }
         private void txtMaphieu_Leave(object sender, EventArgs e)
@@ -370,8 +366,6 @@ namespace Test
             }
 
         }
-       
-
         private void btnSuatour_Click(object sender, EventArgs e)
         {
          
@@ -409,6 +403,24 @@ namespace Test
             }
           
 
+        }
+        public void LoadListviewThongtintour(string matour,int soluong)
+        {
+            if (TourDAO.Instance.UpdateTourQuantity(matour, soluong))
+            {
+                listvThongtintour.Items.Clear();
+                List<TourDTO> listtour = TourDAO.Instance.GetTourDTOByID(matour);
+                foreach (TourDTO item in listtour)
+                {
+                    ListViewItem lst = new ListViewItem(item.LoTrinh.ToString());
+                    lst.SubItems.Add(item.HanhTrinh.ToString());
+                    lst.SubItems.Add(item.GiaTour.ToString());
+                    lst.SubItems.Add((50 - item.SoluongHientai).ToString());
+                    lst.SubItems.Add(item.NgayDi.ToShortDateString());
+                    lst.SubItems.Add(item.NgayVe.ToShortDateString());
+                    listvThongtintour.Items.Add(lst);
+                }
+            }
         }
         /// <summary>
         /// Load lại listview tour đã chọn khi đã sửa 

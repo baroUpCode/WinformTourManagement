@@ -47,6 +47,18 @@ namespace Test.DAO
             var result = DataProvider.Instance.ExecuteNonQuery(query, new object[] {matour,hanhtrinh,lotrinh,giatour,maquy,matrangthai,dadangky,ngaydi,ngayve});
             return result > 0;
         }
+        /// <summary>
+        /// Cập nhật số lượng hiện tại của tour khi thêm mới hoặc update số lượng trong chi tiết phiếu đăng ký 
+        /// </summary>
+        /// <param name="matour"></param>
+        /// <param name="soluongdangky"></param>
+        /// <returns></returns>
+        public bool UpdateTourQuantity(string matour,int soluongdangky)
+        {
+            string query = "exec proc_UpdateQuantityInTour @matour , @detailsquantity ";
+            var result = DataProvider.Instance.ExecuteNonQuery(query,new object[] {matour,soluongdangky });
+            return result > 0;
+        }
         //public DataTable GetTourByMaTour(string matour)
         //{
         //    string query = "exec proc_GetTourByMaTour @matour";
@@ -56,7 +68,7 @@ namespace Test.DAO
         public List<TourDTO> GetTourDTOByID(string id )
         {
             List<TourDTO> list = new List<TourDTO>();
-            string query = "Select * from Tour where MaTour = @matour";
+            string query = "Select * from Tour where MaTour = @matour ";
             DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] {id});
             foreach (DataRow row in dt.Rows)
             {
@@ -102,5 +114,6 @@ namespace Test.DAO
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;
         }
+
     }
 }

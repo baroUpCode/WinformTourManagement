@@ -26,8 +26,8 @@ namespace Test.DAO_Controller_
         /// <param name="soluongdangky"></param>
         /// <returns></returns>
         public bool InsertRegisFormDetails(string matour, string maphieu , int soluongdangky) {
-            string query = "insert into dbo.Chitiet_PhieuDangKy(MaTour,MaPDK,SoluongDangky) values ( @matour , @maphieu , @soluong )";
-            var dt = DataProvider.Instance.ExecuteNonQuery(query, new object[] { matour, maphieu, soluongdangky });
+            string query = "exec proc_InsertRegisFormDetails @mapdk , @matour , @soluongdangky ";
+            var dt = DataProvider.Instance.ExecuteNonQuery(query, new object[] { maphieu, matour,  soluongdangky });
             return dt > 0;
         }
         /// <summary>
