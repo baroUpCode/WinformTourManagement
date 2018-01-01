@@ -62,6 +62,35 @@ namespace Test.DAO_Controller_
             }
             return list;
         }
-
+        public List<RegisterFormDetailsDTO> GetExistTourBackDate(string mapdk)
+        {
+            string query = "exec pro_GetExistsTourBackDate @mapdk ";
+            List<RegisterFormDetailsDTO> list = new List<RegisterFormDetailsDTO>();
+            var dt =DataProvider.Instance.ExecuteQuery(query, new object[] { mapdk });
+            foreach(DataRow r in dt.Rows)
+            {
+                RegisterFormDetailsDTO re = new RegisterFormDetailsDTO(r);
+                list.Add(re);
+            }
+            return list;
+        }
+        public bool GetTourByRegisDetails(string mapdk,string matour)
+        {
+            string query = "select * from Chitiet_PhieuDangKy where MaTour = @matour and MaPDK = @maphieu ";
+            int dt = DataProvider.Instance.ExecuteNonQuery(query, new object[] { matour, mapdk });
+            return dt > 0;
+        }
+        public List<ShowRegisDetailsTourAndCusDTO> ShowRegisDetailsTourAndCus(string dienthoai)
+        {
+            List<ShowRegisDetailsTourAndCusDTO> list = new List<ShowRegisDetailsTourAndCusDTO>();
+            string query = "exec pro_ShowRegisDetailsTourAndCus @dienthoai" ;
+            var dt = DataProvider.Instance.ExecuteQuery(query,new object[] { dienthoai});
+            foreach(DataRow r in dt.Rows)
+            {
+                ShowRegisDetailsTourAndCusDTO show = new ShowRegisDetailsTourAndCusDTO(r);
+                list.Add(show);
+            }
+            return list;
+        }
     }
 }

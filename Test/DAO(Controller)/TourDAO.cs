@@ -113,6 +113,12 @@ namespace Test.DAO
             string query = "exec GetTourByID "+id;
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;
+        } 
+        public DataTable GetTourBeginDate(string id )
+        {
+            string query = "exec pro_GetTourBeginDate " + id;
+            var dt = DataProvider.Instance.ExecuteQuery(query);
+            return dt;
         }
 
     }

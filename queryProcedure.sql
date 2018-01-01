@@ -55,4 +55,16 @@ begin
 		end
 end
 go
-exec proc_UpdateQuantityInTour 'T002' , 20 
+ALTER proc pro_GetExistsTourBackDate
+@mapdk char(5)
+as
+select Top 1 t.NgayVe from Chitiet_PhieuDangKy c, Tour t where MaPDK = @mapdk and c.MaTour=t.MaTour order by t.NgayVe desc
+
+exec pro_GetExistsTourBeginDate 'PDK01'
+go
+alter proc pro_GetTourBackDay
+@matour char(5)
+as
+select Top 1 t.NgayDi from Tour t where  MaTour= @matour 
+go
+exec pro_GetTourBackDay 'T002'

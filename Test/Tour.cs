@@ -419,21 +419,24 @@ namespace Test
         {
             txtMatour.MaxLength = 5;
         }
-
-        private void txtDadangky_Leave(object sender, EventArgs e)
+        private void dtpNgayve_Validated(object sender, EventArgs e)
         {
-           
-            //var sl = new TourDTO(TourDAO.Instance.GetMaTour(txtMatour.Text).Rows.Find("MaTour"));
-            //if (Int32.Parse(txtDadangky.Text) > (50-sl.SoLuongdangky))
-            //{
-            //    MessageBox.Show("Số lượng không được vượt quá 50! ", "Thông Báo");
-            //    txtDadangky.Focus();
-            //}
+            if(dtpNgayve.Value < dtpNgaydi.Value)
+            {
+                MessageBox.Show("Ngày về không thể nhỏ hơn ngày đi .");
+                dtpNgayve.Focus();
+            }
         }
-        //private void cbxMaquy_KeyPress(object sender, KeyPressEventArgs e)
-        //{
-        //    e.Handled = true;
-        //}
+
+        private void dtpNgaydi_Validated(object sender, EventArgs e)
+        {
+            dtpNgaydi.MinDate = DateTime.Now;
+        }
+
+        private void txtDadangky_Validated(object sender, EventArgs e)
+        {
+            txtDadangky.MaxLength = 2;
+        }
     }
     #endregion
 

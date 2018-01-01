@@ -255,6 +255,26 @@ namespace Test
                 }
             }
         }
+        public void ValidateDate(string maphieu)
+        {
+            TourDTO tour = cbxTour.SelectedItem as TourDTO;
+            DateTime ngaydi = tour.NgayDi;
+            List<RegisterFormDetailsDTO> regis = RegisterFormDetailsDAO.Instance.GetRegisDetailsByID(maphieu);
+            foreach (var i in regis)
+            {
+                List<TourDTO> t = TourDAO.Instance.GetTourDTOByID(i.MaTour);
+                foreach (var t1 in t)
+                {
+                    DateTime ngayve = t1.NgayVe;
+                    if (ngaydi <= ngayve)
+                    {
+                        MessageBox.Show("Có xung đột giữa ngày đi và ngày về, vui lòng chọn lại tour.");
+                        txtSoluong.Clear();
+                        cbxTour.Focus();
+                    }     
+                }
+            }
+        }
         private void btnThemtour_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtSoluong.Text))
@@ -263,39 +283,54 @@ namespace Test
                 txtSoluong.Focus();
             }
             else
-            { 
-            List<TourDTO> list = TourDAO.Instance.GetTourDTOByID(cbxTour.SelectedValue.ToString());
-            foreach (TourDTO item in list)
             {
-                    if(Int32.Parse(txtSoluong.Text) > (50-item.SoluongHientai))
+                List<TourDTO> list = TourDAO.Instance.GetTourDTOByID(cbxTour.SelectedValue.ToString());
+                foreach (TourDTO item in list)
+                {
+                    if (Int32.Parse(txtSoluong.Text) > (50 - item.SoluongHientai))
                     {
                         MessageBox.Show("Số lượng đăng ký vượt quá số chỗ còn lại, vui lòng chọn tour khác hoặc nhập lại số lượng!");
                         txtSoluong.Focus();
-                    }else if((50 - Int32.Parse(item.SoluongHientai.ToString())) <= 0  )
-                        {
+                    }
+                    else if ((50 - Int32.Parse(item.SoluongHientai.ToString())) <= 0)
+                    {
                         MessageBox.Show("Số lượng đăng ký vượt quá số chỗ còn lại, vui lòng chọn tour khác hoặc nhập lại số lượng!");
                         cbxTour.Focus();
                     }
-                    else
-                    {
-                        if (RegisterFormDetailsDAO.Instance.InsertRegisFormDetails(cbxTour.SelectedValue.ToString().ToUpper(), txtMaphieu.Text.ToUpper(), Int32.Parse(txtSoluong.Text)))
-                        {
-                                LoadSelectedTourList(txtMaphieu.Text.ToUpper());
-                                LoadListviewThongtintour(cbxTour.SelectedValue.ToString().ToUpper(),Int32.Parse(txtSoluong.Text));
-                                MessageBox.Show("Tour được thêm thành công");
-                        }
+                    //else
+                    //{
+                    //    //if (RegisterFormDetailsDAO.Instance.GetTourByRegisDetails(txtMaphieu.Text.ToUpper(), item.MaTour))
+                    //    //{
+                    //    //    var ngaydiitem = item.NgayDi;
+                    //    //    var ngayveitem = listvTourdachon.Items[0].SubItems[5].Text;
+                    //    //    if (ngaydiitem < DateTime.Parse(ngayveitem))
+                    //    //    {
+                    //    //        MessageBox.Show("Nguuu");
+                    //    //        cbxTour.Focus();
+                    //    //    }
+                    //    //}
+                    //}
                         else
                         {
-                            MessageBox.Show("Có lỗi xảy ra vui lòng thử lại !");
-                            cbxTour.Focus();
-                        }
-                        btnXoatour.Enabled = true;
-                        txtSoluong.Clear();
+                            if (RegisterFormDetailsDAO.Instance.InsertRegisFormDetails(cbxTour.SelectedValue.ToString().ToUpper(), txtMaphieu.Text.ToUpper(), Int32.Parse(txtSoluong.Text)))
+                            {
+                                LoadSelectedTourList(txtMaphieu.Text.ToUpper());
+                                LoadListviewThongtintour(cbxTour.SelectedValue.ToString().ToUpper(), Int32.Parse(txtSoluong.Text));
+                                MessageBox.Show("Tour được thêm thành công");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Có lỗi xảy ra vui lòng thử lại !");
+                                cbxTour.Focus();
+                            }
+                            btnXoatour.Enabled = true;
+                            txtSoluong.Clear();
 
+                        }
+                        }
                     }
                 }
-            }
-        }
+            
         /// <summary>
         /// Nếu giá trị trong combobox thay đổi thì gán về cho datgridview
         /// </summary>
@@ -362,6 +397,12 @@ namespace Test
             if (string.IsNullOrEmpty(txtMaphieu.Text))
             {
                 MessageBox.Show("Vui lòng nhập mã phiếu.");
+                txtMaphieu.Focus();
+            }
+            else if (RegisterFormDAO.Instance.GetRegisFormByID(txtMaphieu.Text.ToUpper()))
+            {
+                MessageBox.Show("Mã phiếu đã tồn tại.");
+                txtMaphieu.Clear();
                 txtMaphieu.Focus();
             }
 

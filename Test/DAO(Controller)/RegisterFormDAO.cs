@@ -26,14 +26,14 @@ namespace Test.DAO_Controller_
         /// <returns></returns>
         public bool InsertRegisForm(string mapdk, int makh )
         {
-            string query = " insert into dbo.PhieuDangKyTour(MaPDK,MaNV,MaKH,NgayLap) values( @mapdk , null , @makh , GETDATE()) ";
+            string query = " insert into dbo.PhieuDangKyTour(MaPDK,MaNV,MaKH,NgayLap,TrangThaiPhieu) values( @mapdk , null , @makh , GETDATE(), 1) ";
             int dt = DataProvider.Instance.ExecuteNonQuery(query, new object[] {mapdk, makh});
             return dt > 0;
         }
-        public bool UpdateRegisForm(string mapdk, string manv,int makh)
+        public bool UpdateRegisForm(string mapdk, /*string manv,*/ int trangthaiphieu=1)
         {
-            string query = "update dbo.PhieuDangKyTour set MaNV = @manv , MaKH = @makh where MaPDK = @maphieu ";
-            int dt = DataProvider.Instance.ExecuteNonQuery(query, new object[] { manv, makh, mapdk });
+            string query = "update dbo.PhieuDangKyTour set TrangThaiPhieu = @trangthaiphieu where MaPDK = @maphieu ";
+            int dt = DataProvider.Instance.ExecuteNonQuery(query, new object[] { /*, makh,*/ trangthaiphieu , mapdk });
             return dt > 0;
         }
         //Xoa toan bo thong tin cua phieu dang ky 
@@ -43,11 +43,17 @@ namespace Test.DAO_Controller_
             int dt = DataProvider.Instance.ExecuteNonQuery(query);
             return dt > 0;
         }
-        public bool GetRegisFormByID(string id)
+        public bool GetRegisFormByID(string mapdk)
         {
             string query = "select * from PhieuDangKyTour where MaPDK = @maphieu ";
-            int dt = DataProvider.Instance.ExecuteNonQuery(query,new object[] {id});
+            int dt = DataProvider.Instance.ExecuteNonQuery(query,new object[] { mapdk });
             return dt > 0;
+        }
+        public string GetRegisFromByCusID(string makh)
+        {
+            string query = "select * from PhieuDangKyTour where MaKH = "+makh;
+            string dt = (string)DataProvider.Instance.ExecuteScalar(query);
+            return dt;
         }
     }
 }

@@ -237,9 +237,9 @@
             this.label8.Location = new System.Drawing.Point(465, 110);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 17);
+            this.label8.Size = new System.Drawing.Size(114, 17);
             this.label8.TabIndex = 54;
-            this.label8.Text = "Đã đăng ký";
+            this.label8.Text = "Số lượng hiện tại";
             // 
             // txtDadangky
             // 
@@ -249,7 +249,7 @@
             this.txtDadangky.Size = new System.Drawing.Size(230, 22);
             this.txtDadangky.TabIndex = 55;
             this.txtDadangky.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDadangky_KeyPress);
-            this.txtDadangky.Leave += new System.EventHandler(this.txtDadangky_Leave);
+            this.txtDadangky.Validated += new System.EventHandler(this.txtDadangky_Validated);
             // 
             // txtGiatour
             // 
@@ -288,6 +288,7 @@
             this.dtpNgaydi.Size = new System.Drawing.Size(265, 22);
             this.dtpNgaydi.TabIndex = 62;
             this.dtpNgaydi.Leave += new System.EventHandler(this.dtpNgaydi_Leave);
+            this.dtpNgaydi.Validated += new System.EventHandler(this.dtpNgaydi_Validated);
             // 
             // label10
             // 
@@ -307,6 +308,7 @@
             this.dtpNgayve.Size = new System.Drawing.Size(230, 22);
             this.dtpNgayve.TabIndex = 64;
             this.dtpNgayve.Leave += new System.EventHandler(this.dtpNgayve_Leave);
+            this.dtpNgayve.Validated += new System.EventHandler(this.dtpNgayve_Validated);
             // 
             // Tour
             // 

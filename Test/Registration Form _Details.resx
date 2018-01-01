@@ -117,4 +117,433 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="txtTimkiem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>91, 298</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txtTimkiem.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtTimkiem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>171, 22</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txtTimkiem.TabIndex" type="System.Int32, mscorlib">
+    <value>83</value>
+  </data>
+  <data name="&gt;&gt;txtTimkiem.Name" xml:space="preserve">
+    <value>txtTimkiem</value>
+  </data>
+  <data name="&gt;&gt;txtTimkiem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtTimkiem.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtTimkiem.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 301</value>
+  </data>
+  <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 17</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>78</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Tìm kiếm</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btnThoat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>860, 292</value>
+  </data>
+  <data name="btnThoat.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="btnThoat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 35</value>
+  </data>
+  <data name="btnThoat.TabIndex" type="System.Int32, mscorlib">
+    <value>77</value>
+  </data>
+  <data name="btnThoat.Text" xml:space="preserve">
+    <value>Thoát</value>
+  </data>
+  <data name="&gt;&gt;btnThoat.Name" xml:space="preserve">
+    <value>btnThoat</value>
+  </data>
+  <data name="&gt;&gt;btnThoat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnThoat.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnThoat.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btnHuyphieu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>632, 292</value>
+  </data>
+  <data name="btnHuyphieu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="btnHuyphieu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 35</value>
+  </data>
+  <data name="btnHuyphieu.TabIndex" type="System.Int32, mscorlib">
+    <value>76</value>
+  </data>
+  <data name="btnHuyphieu.Text" xml:space="preserve">
+    <value>Hủy Phiếu</value>
+  </data>
+  <data name="&gt;&gt;btnHuyphieu.Name" xml:space="preserve">
+    <value>btnHuyphieu</value>
+  </data>
+  <data name="&gt;&gt;btnHuyphieu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnHuyphieu.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnHuyphieu.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="grbxThongtinpdk.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;listvThongtinpdk.Name" xml:space="preserve">
+    <value>listvThongtinpdk</value>
+  </data>
+  <data name="&gt;&gt;listvThongtinpdk.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listvThongtinpdk.Parent" xml:space="preserve">
+    <value>grbxThongtinpdk</value>
+  </data>
+  <data name="&gt;&gt;listvThongtinpdk.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="grbxThongtinpdk.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="grbxThongtinpdk.Size" type="System.Drawing.Size, System.Drawing">
+    <value>964, 273</value>
+  </data>
+  <data name="grbxThongtinpdk.TabIndex" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="grbxThongtinpdk.Text" xml:space="preserve">
+    <value>Thông tin phiếu đăng ký </value>
+  </data>
+  <data name="&gt;&gt;grbxThongtinpdk.Name" xml:space="preserve">
+    <value>grbxThongtinpdk</value>
+  </data>
+  <data name="&gt;&gt;grbxThongtinpdk.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbxThongtinpdk.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;grbxThongtinpdk.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="listvThongtinpdk.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 21</value>
+  </data>
+  <data name="listvThongtinpdk.Size" type="System.Drawing.Size, System.Drawing">
+    <value>943, 231</value>
+  </data>
+  <data name="listvThongtinpdk.TabIndex" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="&gt;&gt;listvThongtinpdk.Name" xml:space="preserve">
+    <value>listvThongtinpdk</value>
+  </data>
+  <data name="&gt;&gt;listvThongtinpdk.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listvThongtinpdk.Parent" xml:space="preserve">
+    <value>grbxThongtinpdk</value>
+  </data>
+  <data name="&gt;&gt;listvThongtinpdk.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lotrinh.Text" xml:space="preserve">
+    <value>Lộ trình</value>
+  </data>
+  <data name="lotrinh.Width" type="System.Int32, mscorlib">
+    <value>120</value>
+  </data>
+  <data name="hanhtrinh.Text" xml:space="preserve">
+    <value>Hành trình</value>
+  </data>
+  <data name="hanhtrinh.Width" type="System.Int32, mscorlib">
+    <value>90</value>
+  </data>
+  <data name="ngaydi.Text" xml:space="preserve">
+    <value>Ngày đi</value>
+  </data>
+  <data name="ngaydi.Width" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="ngayve.Text" xml:space="preserve">
+    <value>Ngày về</value>
+  </data>
+  <data name="ngayve.Width" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="soluong.Text" xml:space="preserve">
+    <value>Số lượng</value>
+  </data>
+  <data name="soluong.Width" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="tenkhachhang.Text" xml:space="preserve">
+    <value>Tên khách hàng</value>
+  </data>
+  <data name="tenkhachhang.Width" type="System.Int32, mscorlib">
+    <value>120</value>
+  </data>
+  <data name="sodienthoai.Text" xml:space="preserve">
+    <value>Số điện thoại</value>
+  </data>
+  <data name="sodienthoai.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="diachi.Text" xml:space="preserve">
+    <value>Địa chỉ</value>
+  </data>
+  <data name="diachi.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="btnTimkiem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>270, 293</value>
+  </data>
+  <data name="btnTimkiem.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="btnTimkiem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 32</value>
+  </data>
+  <data name="btnTimkiem.TabIndex" type="System.Int32, mscorlib">
+    <value>85</value>
+  </data>
+  <data name="btnTimkiem.Text" xml:space="preserve">
+    <value>Tìm</value>
+  </data>
+  <data name="&gt;&gt;btnTimkiem.Name" xml:space="preserve">
+    <value>btnTimkiem</value>
+  </data>
+  <data name="&gt;&gt;btnTimkiem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnTimkiem.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnTimkiem.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;listvDiemthamquan.Name" xml:space="preserve">
+    <value>listvDiemthamquan</value>
+  </data>
+  <data name="&gt;&gt;listvDiemthamquan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listvDiemthamquan.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;listvDiemthamquan.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>982, 12</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>312, 318</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>86</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Điểm tham quan</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="listvDiemthamquan.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 21</value>
+  </data>
+  <data name="listvDiemthamquan.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 290</value>
+  </data>
+  <data name="listvDiemthamquan.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;listvDiemthamquan.Name" xml:space="preserve">
+    <value>listvDiemthamquan</value>
+  </data>
+  <data name="&gt;&gt;listvDiemthamquan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listvDiemthamquan.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;listvDiemthamquan.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tendiem.Text" xml:space="preserve">
+    <value>Tên điểm </value>
+  </data>
+  <data name="tendiem.Width" type="System.Int32, mscorlib">
+    <value>120</value>
+  </data>
+  <data name="dc.Text" xml:space="preserve">
+    <value>Địa chỉ</value>
+  </data>
+  <data name="dc.Width" type="System.Int32, mscorlib">
+    <value>180</value>
+  </data>
+  <data name="btnLammoi.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnLammoi.Location" type="System.Drawing.Point, System.Drawing">
+    <value>746, 292</value>
+  </data>
+  <data name="btnLammoi.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="btnLammoi.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 35</value>
+  </data>
+  <data name="btnLammoi.TabIndex" type="System.Int32, mscorlib">
+    <value>87</value>
+  </data>
+  <data name="btnLammoi.Text" xml:space="preserve">
+    <value>Làm mới</value>
+  </data>
+  <data name="&gt;&gt;btnLammoi.Name" xml:space="preserve">
+    <value>btnLammoi</value>
+  </data>
+  <data name="&gt;&gt;btnLammoi.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnLammoi.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnLammoi.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 16</value>
+  </data>
+  <data name="$this.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1306, 343</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Registration_Form__Details</value>
+  </data>
+  <data name="&gt;&gt;lotrinh.Name" xml:space="preserve">
+    <value>lotrinh</value>
+  </data>
+  <data name="&gt;&gt;lotrinh.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hanhtrinh.Name" xml:space="preserve">
+    <value>hanhtrinh</value>
+  </data>
+  <data name="&gt;&gt;hanhtrinh.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ngaydi.Name" xml:space="preserve">
+    <value>ngaydi</value>
+  </data>
+  <data name="&gt;&gt;ngaydi.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ngayve.Name" xml:space="preserve">
+    <value>ngayve</value>
+  </data>
+  <data name="&gt;&gt;ngayve.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;soluong.Name" xml:space="preserve">
+    <value>soluong</value>
+  </data>
+  <data name="&gt;&gt;soluong.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tenkhachhang.Name" xml:space="preserve">
+    <value>tenkhachhang</value>
+  </data>
+  <data name="&gt;&gt;tenkhachhang.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;sodienthoai.Name" xml:space="preserve">
+    <value>sodienthoai</value>
+  </data>
+  <data name="&gt;&gt;sodienthoai.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;diachi.Name" xml:space="preserve">
+    <value>diachi</value>
+  </data>
+  <data name="&gt;&gt;diachi.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tendiem.Name" xml:space="preserve">
+    <value>tendiem</value>
+  </data>
+  <data name="&gt;&gt;tendiem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dc.Name" xml:space="preserve">
+    <value>dc</value>
+  </data>
+  <data name="&gt;&gt;dc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Registration_Form__Details</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
