@@ -56,13 +56,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO%28Controller%29\AccountDAO.cs" />
+    <Compile Include="DAO%28Controller%29\QuyDAO.cs" />
     <Compile Include="DAO%28Controller%29\RegisterFormDetailsDAO.cs" />
     <Compile Include="DAO%28Controller%29\CustomerDAO.cs" />
     <Compile Include="DAO%28Controller%29\DataProvicder.cs" />
     <Compile Include="DAO%28Controller%29\HotelDAO.cs" />
     <Compile Include="DAO%28Controller%29\RegisterFormDAO.cs" />
     <Compile Include="DAO%28Controller%29\PlaceableDAO.cs" />
+    <Compile Include="DAO%28Controller%29\ReportDAO.cs" />
     <Compile Include="DAO%28Controller%29\StaffDAO.cs" />
+    <Compile Include="DAO%28Controller%29\ThangDAO.cs" />
     <Compile Include="DAO%28Controller%29\TheStopDAO.cs" />
     <Compile Include="DAO%28Controller%29\TheStopDetailsDAO.cs" />
     <Compile Include="DAO%28Controller%29\TourDAO.cs" />

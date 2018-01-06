@@ -120,6 +120,41 @@ namespace Test.DAO
             var dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;
         }
-
+        public List<TourDTO> GetTourByBeginMonth(int ngaydi)
+        {
+            List<TourDTO> list = new List<TourDTO>();
+            string query = "select * from Tour where MONTH(NgayDi) =  @ngaydi" ;
+            var dt = DataProvider.Instance.ExecuteQuery(query,new object[] {ngaydi});
+            foreach(DataRow r in dt.Rows)
+            {
+                TourDTO tour = new TourDTO(r);
+                list.Add(tour);
+            }
+            return list;
+        }
+        public List<TourDTO> GetTourByQuy(int quy)
+        {
+            List<TourDTO> list = new List<TourDTO>();
+            string query = "select * from Tour where MaQuy =  @quy";
+            var dt = DataProvider.Instance.ExecuteQuery(query, new object[] { quy });
+            foreach (DataRow r in dt.Rows)
+            {
+                TourDTO tour = new TourDTO(r);
+                list.Add(tour);
+            }
+            return list;
+        }
+        public List<TourDTO> GetTourByCreateDay(DateTime ngaybd , DateTime ngaykt )
+        {
+            List<TourDTO> list = new List<TourDTO>();
+            string query = "pro_GetTourByCreateDate @ngaybd , @ngaykt";
+            var dt = DataProvider.Instance.ExecuteQuery(query, new object[] {ngaybd.ToShortDateString(), ngaykt.ToShortDateString() });
+            foreach (DataRow r in dt.Rows)
+            {
+                TourDTO tour = new TourDTO(r);
+                list.Add(tour);
+            }
+            return list;
+        }
     }
 }

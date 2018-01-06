@@ -89,5 +89,10 @@ namespace Test
             }
         }
 
+        private void báoCáoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Report report = new Report();
+            report.ShowDialog();
+        }
     }
 }
