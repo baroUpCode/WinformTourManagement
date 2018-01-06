@@ -39,7 +39,6 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.dtgvTour = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtLotrinh = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -53,7 +52,16 @@
             this.dtpNgaydi = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.dtpNgayve = new System.Windows.Forms.DateTimePicker();
+            this.dtgvTour = new System.Windows.Forms.DataGridView();
+            this.cbxDiemdungchan = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnThemdtq = new System.Windows.Forms.Button();
+            this.dtgvThongtindtq = new System.Windows.Forms.DataGridView();
+            this.dtgvDtqdachon = new System.Windows.Forms.DataGridView();
+            this.btnXoadtq = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTour)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvThongtindtq)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvDtqdachon)).BeginInit();
             this.SuspendLayout();
             // 
             // txtHanhtrinh
@@ -71,13 +79,14 @@
             this.txtMatour.Name = "txtMatour";
             this.txtMatour.Size = new System.Drawing.Size(265, 22);
             this.txtMatour.TabIndex = 47;
+            this.txtMatour.TextChanged += new System.EventHandler(this.txtMatour_TextChanged);
             this.txtMatour.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMatour_KeyPress);
             this.txtMatour.Leave += new System.EventHandler(this.txtMatour_Leave);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 71);
+            this.label4.Location = new System.Drawing.Point(27, 71);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 17);
@@ -87,7 +96,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 110);
+            this.label3.Location = new System.Drawing.Point(27, 110);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 17);
@@ -97,7 +106,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 33);
+            this.label2.Location = new System.Drawing.Point(27, 33);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 17);
@@ -106,7 +115,7 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(780, 202);
+            this.btnThoat.Location = new System.Drawing.Point(711, 202);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(100, 28);
@@ -117,7 +126,7 @@
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(638, 202);
+            this.btnHuy.Location = new System.Drawing.Point(564, 202);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(4);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(100, 28);
@@ -128,7 +137,7 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(488, 202);
+            this.btnLuu.Location = new System.Drawing.Point(429, 202);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(100, 28);
@@ -139,7 +148,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(334, 202);
+            this.btnSua.Location = new System.Drawing.Point(297, 202);
             this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(100, 28);
@@ -150,7 +159,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(190, 202);
+            this.btnXoa.Location = new System.Drawing.Point(169, 202);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(100, 28);
@@ -169,18 +178,6 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // dtgvTour
-            // 
-            this.dtgvTour.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvTour.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dtgvTour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvTour.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dtgvTour.Location = new System.Drawing.Point(0, 249);
-            this.dtgvTour.Margin = new System.Windows.Forms.Padding(4);
-            this.dtgvTour.Name = "dtgvTour";
-            this.dtgvTour.Size = new System.Drawing.Size(895, 161);
-            this.dtgvTour.TabIndex = 35;
             // 
             // label1
             // 
@@ -243,20 +240,20 @@
             // 
             // txtDadangky
             // 
-            this.txtDadangky.Location = new System.Drawing.Point(578, 107);
+            this.txtDadangky.Location = new System.Drawing.Point(579, 107);
             this.txtDadangky.Margin = new System.Windows.Forms.Padding(4);
             this.txtDadangky.Name = "txtDadangky";
-            this.txtDadangky.Size = new System.Drawing.Size(230, 22);
+            this.txtDadangky.Size = new System.Drawing.Size(231, 22);
             this.txtDadangky.TabIndex = 55;
             this.txtDadangky.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDadangky_KeyPress);
             this.txtDadangky.Validated += new System.EventHandler(this.txtDadangky_Validated);
             // 
             // txtGiatour
             // 
-            this.txtGiatour.Location = new System.Drawing.Point(578, 28);
+            this.txtGiatour.Location = new System.Drawing.Point(579, 28);
             this.txtGiatour.Margin = new System.Windows.Forms.Padding(4);
             this.txtGiatour.Name = "txtGiatour";
-            this.txtGiatour.Size = new System.Drawing.Size(230, 22);
+            this.txtGiatour.Size = new System.Drawing.Size(231, 22);
             this.txtGiatour.TabIndex = 58;
             this.txtGiatour.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGiatour_KeyPress);
             this.txtGiatour.Leave += new System.EventHandler(this.txtGiatour_Leave);
@@ -264,16 +261,17 @@
             // cbxTrangthai
             // 
             this.cbxTrangthai.FormattingEnabled = true;
-            this.cbxTrangthai.Location = new System.Drawing.Point(578, 66);
+            this.cbxTrangthai.Location = new System.Drawing.Point(579, 66);
+            this.cbxTrangthai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxTrangthai.Name = "cbxTrangthai";
-            this.cbxTrangthai.Size = new System.Drawing.Size(230, 24);
+            this.cbxTrangthai.Size = new System.Drawing.Size(231, 24);
             this.cbxTrangthai.TabIndex = 59;
             this.cbxTrangthai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbxTrangthai_KeyPress);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(26, 156);
+            this.label9.Location = new System.Drawing.Point(27, 156);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(56, 17);
@@ -284,6 +282,7 @@
             // 
             this.dtpNgaydi.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgaydi.Location = new System.Drawing.Point(169, 151);
+            this.dtpNgaydi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpNgaydi.Name = "dtpNgaydi";
             this.dtpNgaydi.Size = new System.Drawing.Size(265, 22);
             this.dtpNgaydi.TabIndex = 62;
@@ -303,18 +302,92 @@
             // dtpNgayve
             // 
             this.dtpNgayve.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayve.Location = new System.Drawing.Point(578, 151);
+            this.dtpNgayve.Location = new System.Drawing.Point(579, 151);
+            this.dtpNgayve.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpNgayve.Name = "dtpNgayve";
-            this.dtpNgayve.Size = new System.Drawing.Size(230, 22);
+            this.dtpNgayve.Size = new System.Drawing.Size(231, 22);
             this.dtpNgayve.TabIndex = 64;
             this.dtpNgayve.Leave += new System.EventHandler(this.dtpNgayve_Leave);
             this.dtpNgayve.Validated += new System.EventHandler(this.dtpNgayve_Validated);
+            // 
+            // dtgvTour
+            // 
+            this.dtgvTour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvTour.Location = new System.Drawing.Point(31, 242);
+            this.dtgvTour.Margin = new System.Windows.Forms.Padding(4);
+            this.dtgvTour.Name = "dtgvTour";
+            this.dtgvTour.Size = new System.Drawing.Size(887, 209);
+            this.dtgvTour.TabIndex = 65;
+            // 
+            // cbxDiemdungchan
+            // 
+            this.cbxDiemdungchan.FormattingEnabled = true;
+            this.cbxDiemdungchan.Location = new System.Drawing.Point(1045, 26);
+            this.cbxDiemdungchan.Name = "cbxDiemdungchan";
+            this.cbxDiemdungchan.Size = new System.Drawing.Size(268, 24);
+            this.cbxDiemdungchan.TabIndex = 67;
+            this.cbxDiemdungchan.SelectedIndexChanged += new System.EventHandler(this.cbxDiemdungchan_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(923, 29);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(115, 17);
+            this.label6.TabIndex = 68;
+            this.label6.Text = "Điểm dừng chân ";
+            // 
+            // btnThemdtq
+            // 
+            this.btnThemdtq.Location = new System.Drawing.Point(1002, 189);
+            this.btnThemdtq.Name = "btnThemdtq";
+            this.btnThemdtq.Size = new System.Drawing.Size(130, 46);
+            this.btnThemdtq.TabIndex = 70;
+            this.btnThemdtq.Text = "Thêm điểm tham quan";
+            this.btnThemdtq.UseVisualStyleBackColor = true;
+            this.btnThemdtq.Click += new System.EventHandler(this.btnThemdtq_Click);
+            // 
+            // dtgvThongtindtq
+            // 
+            this.dtgvThongtindtq.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvThongtindtq.Location = new System.Drawing.Point(926, 57);
+            this.dtgvThongtindtq.Margin = new System.Windows.Forms.Padding(4);
+            this.dtgvThongtindtq.Name = "dtgvThongtindtq";
+            this.dtgvThongtindtq.Size = new System.Drawing.Size(387, 124);
+            this.dtgvThongtindtq.TabIndex = 71;
+            // 
+            // dtgvDtqdachon
+            // 
+            this.dtgvDtqdachon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvDtqdachon.Location = new System.Drawing.Point(926, 242);
+            this.dtgvDtqdachon.Margin = new System.Windows.Forms.Padding(4);
+            this.dtgvDtqdachon.Name = "dtgvDtqdachon";
+            this.dtgvDtqdachon.Size = new System.Drawing.Size(387, 209);
+            this.dtgvDtqdachon.TabIndex = 72;
+            // 
+            // btnXoadtq
+            // 
+            this.btnXoadtq.Location = new System.Drawing.Point(1150, 188);
+            this.btnXoadtq.Name = "btnXoadtq";
+            this.btnXoadtq.Size = new System.Drawing.Size(130, 46);
+            this.btnXoadtq.TabIndex = 73;
+            this.btnXoadtq.Text = "Xóa điêm tham quan";
+            this.btnXoadtq.UseVisualStyleBackColor = true;
+            this.btnXoadtq.Click += new System.EventHandler(this.btnXoadtq_Click);
             // 
             // Tour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(895, 410);
+            this.ClientSize = new System.Drawing.Size(1325, 457);
+            this.Controls.Add(this.btnXoadtq);
+            this.Controls.Add(this.dtgvDtqdachon);
+            this.Controls.Add(this.dtgvThongtindtq);
+            this.Controls.Add(this.btnThemdtq);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.cbxDiemdungchan);
+            this.Controls.Add(this.dtgvTour);
             this.Controls.Add(this.dtpNgayve);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dtpNgaydi);
@@ -338,12 +411,13 @@
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnThem);
-            this.Controls.Add(this.dtgvTour);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Tour";
             this.Text = "Tour";
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTour)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvThongtindtq)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvDtqdachon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -362,7 +436,6 @@
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.DataGridView dtgvTour;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtLotrinh;
         private System.Windows.Forms.Label label5;
@@ -376,6 +449,13 @@
         private System.Windows.Forms.DateTimePicker dtpNgaydi;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dtpNgayve;
+        private System.Windows.Forms.DataGridView dtgvTour;
+        private System.Windows.Forms.ComboBox cbxDiemdungchan;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnThemdtq;
+        private System.Windows.Forms.DataGridView dtgvThongtindtq;
+        private System.Windows.Forms.DataGridView dtgvDtqdachon;
+        private System.Windows.Forms.Button btnXoadtq;
     }
 }
 

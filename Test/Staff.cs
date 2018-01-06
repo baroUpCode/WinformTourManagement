@@ -263,7 +263,7 @@ namespace Test
                     }
                     else
                     {
-                        MessageBox.Show("Khách hàng không tồn tại!", "Thông Báo");
+                        MessageBox.Show("Nhân viên không tồn tại!", "Thông Báo");
                         txtTimkiem.Focus();
                     }
                 }

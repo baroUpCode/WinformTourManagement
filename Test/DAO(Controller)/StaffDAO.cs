@@ -58,8 +58,8 @@ namespace Test.DAO_Controller_
         }
         public DataTable GetStaffByPhone(string search)
         {
-            string query ="exec GetStaffByPhone "+search;
-            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            string query ="exec GetStaffByPhone @search";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] {search });
             return dt;
         }
     }

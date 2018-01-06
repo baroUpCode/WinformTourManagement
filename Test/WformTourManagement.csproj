@@ -64,6 +64,7 @@
     <Compile Include="DAO%28Controller%29\PlaceableDAO.cs" />
     <Compile Include="DAO%28Controller%29\StaffDAO.cs" />
     <Compile Include="DAO%28Controller%29\TheStopDAO.cs" />
+    <Compile Include="DAO%28Controller%29\TheStopDetailsDAO.cs" />
     <Compile Include="DAO%28Controller%29\TourDAO.cs" />
     <Compile Include="DTO%28Model%29\RegisterFormDetailsDTO.cs" />
     <Compile Include="DTO%28Model%29\CustomerDTO.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="DTO%28Model%29\SelectedTourDTO.cs" />
     <Compile Include="DTO%28Model%29\ShowRegisDetailsTourAndCusDTO.cs" />
     <Compile Include="DTO%28Model%29\StaffDTO.cs" />
+    <Compile Include="DTO%28Model%29\PlaceableDTO.cs" />
     <Compile Include="DTO%28Model%29\TourDTO.cs" />
     <Compile Include="DTO%28Model%29\TrangThaiDTO.cs" />
     <Compile Include="Main.cs">
@@ -103,6 +105,12 @@
     </Compile>
     <Compile Include="Registration Form.Designer.cs">
       <DependentUpon>Registration Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
     </Compile>
     <Compile Include="Staff.cs">
       <SubType>Form</SubType>
@@ -151,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registration Form.resx">
       <DependentUpon>Registration Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>

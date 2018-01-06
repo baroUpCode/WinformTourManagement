@@ -47,6 +47,7 @@ namespace Test
             ClearText();
             LoadComboboxTour();
             btnXoatour.Enabled = false ;
+            btnThemtour.Enabled = tag;
             //txtSoluong.Enabled = tag;
             dtpNgaysinh.MaxDate = DateTime.Now.AddDays(-1);
         }

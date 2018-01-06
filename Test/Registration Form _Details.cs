@@ -28,10 +28,12 @@ namespace Test
         private void btnTimkiem_Click(object sender, EventArgs e)
         {
             listvThongtinpdk.Items.Clear();
+            listvDiemthamquan.Items.Clear();
             List<ShowRegisDetailsTourAndCusDTO> list = RegisterFormDetailsDAO.Instance.ShowRegisDetailsTourAndCus(txtTimkiem.Text);
+           
             foreach (ShowRegisDetailsTourAndCusDTO item in list)
             {
-                
+                //thong tin phieu
                 ListViewItem lst = new ListViewItem(item.LoTrinh.ToString());
                 lst.SubItems.Add(item.HanhTrinh.ToString());
                 lst.SubItems.Add(item.NgayDi.ToShortDateString());
@@ -42,7 +44,14 @@ namespace Test
                 lst.SubItems.Add(item.DiaChi.ToString());
                 listvThongtinpdk.Items.Add(lst);
                 listvThongtinpdk.Tag = item.MaPDK;
-              
+                //thong tin diem tham quan
+                List<PlaceableDTO> listplace = PlaceableDAO.Instance.LoadPlaceableListChoose(item.MaTour);
+                foreach(var item1 in listplace)
+                {
+                    ListViewItem lst1 = new ListViewItem(item1.TenDiemThamQuan.ToString());
+                    lst1.SubItems.Add(item1.DiaChi.ToString());
+                    listvDiemthamquan.Items.Add(lst1);
+                }
                 if (item.TrangThaiPhieu == 1)
                 {
                     listvThongtinpdk.ForeColor = Color.Black;
@@ -62,11 +71,6 @@ namespace Test
         private void txtTimkiem_Validated(object sender, EventArgs e)
         {
             txtTimkiem.MaxLength = 12;
-            if (string.IsNullOrEmpty(txtTimkiem.Text))
-            {
-                MessageBox.Show("Vui lòng nhập số điện thoại cần tìm.");
-                txtTimkiem.Focus();
-            }
         }
 
         private void txtTimkiem_KeyPress(object sender, KeyPressEventArgs e)

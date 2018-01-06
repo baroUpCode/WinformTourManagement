@@ -93,3 +93,4 @@ D:\Git\WinformTourManagement\Test\bin\Debug\de\DevExpress.Office.v17.2.Core.reso
 D:\Git\WinformTourManagement\Test\bin\Debug\es\DevExpress.Office.v17.2.Core.resources.dll
 D:\Git\WinformTourManagement\Test\bin\Debug\ja\DevExpress.Office.v17.2.Core.resources.dll
 D:\Git\WinformTourManagement\Test\bin\Debug\ru\DevExpress.Office.v17.2.Core.resources.dll
+D:\Git\WinformTourManagement\Test\obj\Debug\Test.Report.resources

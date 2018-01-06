@@ -119,14 +119,10 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="txtTimkiem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>91, 298</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="txtTimkiem.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>68, 242</value>
   </data>
   <data name="txtTimkiem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
+    <value>129, 20</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtTimkiem.TabIndex" type="System.Int32, mscorlib">
@@ -148,13 +144,10 @@
     <value>True</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 301</value>
-  </data>
-  <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>14, 245</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 17</value>
+    <value>49, 13</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>78</value>
@@ -175,13 +168,10 @@
     <value>5</value>
   </data>
   <data name="btnThoat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>860, 292</value>
-  </data>
-  <data name="btnThoat.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>645, 237</value>
   </data>
   <data name="btnThoat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 35</value>
+    <value>86, 28</value>
   </data>
   <data name="btnThoat.TabIndex" type="System.Int32, mscorlib">
     <value>77</value>
@@ -202,13 +192,10 @@
     <value>4</value>
   </data>
   <data name="btnHuyphieu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>632, 292</value>
-  </data>
-  <data name="btnHuyphieu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>474, 237</value>
   </data>
   <data name="btnHuyphieu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 35</value>
+    <value>80, 28</value>
   </data>
   <data name="btnHuyphieu.TabIndex" type="System.Int32, mscorlib">
     <value>76</value>
@@ -231,68 +218,11 @@
   <data name="grbxThongtinpdk.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;listvThongtinpdk.Name" xml:space="preserve">
-    <value>listvThongtinpdk</value>
-  </data>
-  <data name="&gt;&gt;listvThongtinpdk.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;listvThongtinpdk.Parent" xml:space="preserve">
-    <value>grbxThongtinpdk</value>
-  </data>
-  <data name="&gt;&gt;listvThongtinpdk.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="grbxThongtinpdk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
-  </data>
-  <data name="grbxThongtinpdk.Size" type="System.Drawing.Size, System.Drawing">
-    <value>964, 273</value>
-  </data>
-  <data name="grbxThongtinpdk.TabIndex" type="System.Int32, mscorlib">
-    <value>84</value>
-  </data>
-  <data name="grbxThongtinpdk.Text" xml:space="preserve">
-    <value>Thông tin phiếu đăng ký </value>
-  </data>
-  <data name="&gt;&gt;grbxThongtinpdk.Name" xml:space="preserve">
-    <value>grbxThongtinpdk</value>
-  </data>
-  <data name="&gt;&gt;grbxThongtinpdk.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grbxThongtinpdk.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;grbxThongtinpdk.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="listvThongtinpdk.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 21</value>
-  </data>
-  <data name="listvThongtinpdk.Size" type="System.Drawing.Size, System.Drawing">
-    <value>943, 231</value>
-  </data>
-  <data name="listvThongtinpdk.TabIndex" type="System.Int32, mscorlib">
-    <value>84</value>
-  </data>
-  <data name="&gt;&gt;listvThongtinpdk.Name" xml:space="preserve">
-    <value>listvThongtinpdk</value>
-  </data>
-  <data name="&gt;&gt;listvThongtinpdk.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;listvThongtinpdk.Parent" xml:space="preserve">
-    <value>grbxThongtinpdk</value>
-  </data>
-  <data name="&gt;&gt;listvThongtinpdk.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="lotrinh.Text" xml:space="preserve">
     <value>Lộ trình</value>
   </data>
   <data name="lotrinh.Width" type="System.Int32, mscorlib">
-    <value>120</value>
+    <value>110</value>
   </data>
   <data name="hanhtrinh.Text" xml:space="preserve">
     <value>Hành trình</value>
@@ -334,16 +264,68 @@
     <value>Địa chỉ</value>
   </data>
   <data name="diachi.Width" type="System.Int32, mscorlib">
-    <value>100</value>
+    <value>110</value>
+  </data>
+  <data name="listvThongtinpdk.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 17</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="listvThongtinpdk.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="listvThongtinpdk.Size" type="System.Drawing.Size, System.Drawing">
+    <value>708, 188</value>
+  </data>
+  <data name="listvThongtinpdk.TabIndex" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="&gt;&gt;listvThongtinpdk.Name" xml:space="preserve">
+    <value>listvThongtinpdk</value>
+  </data>
+  <data name="&gt;&gt;listvThongtinpdk.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listvThongtinpdk.Parent" xml:space="preserve">
+    <value>grbxThongtinpdk</value>
+  </data>
+  <data name="&gt;&gt;listvThongtinpdk.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="grbxThongtinpdk.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 10</value>
+  </data>
+  <data name="grbxThongtinpdk.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="grbxThongtinpdk.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="grbxThongtinpdk.Size" type="System.Drawing.Size, System.Drawing">
+    <value>723, 222</value>
+  </data>
+  <data name="grbxThongtinpdk.TabIndex" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="grbxThongtinpdk.Text" xml:space="preserve">
+    <value>Thông tin phiếu đăng ký </value>
+  </data>
+  <data name="&gt;&gt;grbxThongtinpdk.Name" xml:space="preserve">
+    <value>grbxThongtinpdk</value>
+  </data>
+  <data name="&gt;&gt;grbxThongtinpdk.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbxThongtinpdk.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;grbxThongtinpdk.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="btnTimkiem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>270, 293</value>
-  </data>
-  <data name="btnTimkiem.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>202, 238</value>
   </data>
   <data name="btnTimkiem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 32</value>
+    <value>68, 26</value>
   </data>
   <data name="btnTimkiem.TabIndex" type="System.Int32, mscorlib">
     <value>85</value>
@@ -363,6 +345,30 @@
   <data name="&gt;&gt;btnTimkiem.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="tendiem.Text" xml:space="preserve">
+    <value>Tên điểm </value>
+  </data>
+  <data name="tendiem.Width" type="System.Int32, mscorlib">
+    <value>120</value>
+  </data>
+  <data name="dc.Text" xml:space="preserve">
+    <value>Địa chỉ</value>
+  </data>
+  <data name="dc.Width" type="System.Int32, mscorlib">
+    <value>180</value>
+  </data>
+  <data name="listvDiemthamquan.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 17</value>
+  </data>
+  <data name="listvDiemthamquan.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="listvDiemthamquan.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 236</value>
+  </data>
+  <data name="listvDiemthamquan.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;listvDiemthamquan.Name" xml:space="preserve">
     <value>listvDiemthamquan</value>
   </data>
@@ -376,10 +382,16 @@
     <value>0</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>982, 12</value>
+    <value>736, 10</value>
+  </data>
+  <data name="groupBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="groupBox1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 318</value>
+    <value>234, 258</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>86</value>
@@ -399,50 +411,14 @@
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="listvDiemthamquan.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 21</value>
-  </data>
-  <data name="listvDiemthamquan.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 290</value>
-  </data>
-  <data name="listvDiemthamquan.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;listvDiemthamquan.Name" xml:space="preserve">
-    <value>listvDiemthamquan</value>
-  </data>
-  <data name="&gt;&gt;listvDiemthamquan.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;listvDiemthamquan.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;listvDiemthamquan.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tendiem.Text" xml:space="preserve">
-    <value>Tên điểm </value>
-  </data>
-  <data name="tendiem.Width" type="System.Int32, mscorlib">
-    <value>120</value>
-  </data>
-  <data name="dc.Text" xml:space="preserve">
-    <value>Địa chỉ</value>
-  </data>
-  <data name="dc.Width" type="System.Int32, mscorlib">
-    <value>180</value>
-  </data>
   <data name="btnLammoi.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnLammoi.Location" type="System.Drawing.Point, System.Drawing">
-    <value>746, 292</value>
-  </data>
-  <data name="btnLammoi.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>560, 237</value>
   </data>
   <data name="btnLammoi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 35</value>
+    <value>80, 28</value>
   </data>
   <data name="btnLammoi.TabIndex" type="System.Int32, mscorlib">
     <value>87</value>
@@ -466,16 +442,13 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 16</value>
+    <value>6, 13</value>
   </data>
   <data name="$this.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1306, 343</value>
-  </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>980, 279</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Registration_Form__Details</value>

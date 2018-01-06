@@ -25,7 +25,7 @@ namespace Test.DAO_Controller_
         }
         public bool UpdateTheStop(string madiemdung, string tendiemdung)
         {
-            string query = "update dbo.KhachSan SET TenDiem = @tendiemdung WHERE MaDiemDung = @madiemdung ";
+            string query = "update dbo.DiemDung SET TenDiem = @tendiemdung WHERE MaDiemDung = @madiemdung ";
             int dt = DataProvider.Instance.ExecuteNonQuery(query, new object[] { tendiemdung,madiemdung });
             return dt > 0;
         }

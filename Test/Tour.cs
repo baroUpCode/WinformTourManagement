@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Test.DAO;
+using Test.DAO_Controller_;
 using Test.DTO_Model_;
 
 namespace Test
@@ -18,13 +19,25 @@ namespace Test
         {
             InitializeComponent();
             txtHanhtrinh.Enabled = false;
-            //LoadQuy();
             LoadListTour();
             DefaultControl();
+            LoadTheStop();
             LoadTrangThai();
+          
 
         }
         #region
+        void LoadTheStop()
+        {
+            cbxDiemdungchan.DataSource = TheStopDAO.Instance.LoadTheStopList();
+            cbxDiemdungchan.ValueMember = "MaDiemDung";
+            cbxDiemdungchan.DisplayMember = "TenDiem";
+            
+        }
+        void LoadPlaceableRelationByTheStop()
+        {
+            dtgvThongtindtq.DataSource = PlaceableDAO.Instance.GetPlaceableByTheStop(cbxDiemdungchan.SelectedValue.ToString());
+        }
         void DefaultControl()
         {
             TourBinding();
@@ -44,6 +57,7 @@ namespace Test
             //cbxMaquy.Enabled = false;
             cbxTrangthai.Enabled = false;
             dtgvTour.Enabled = true;
+            btnXoadtq.Enabled = false;
 
         }
          void ClearText()
@@ -437,6 +451,63 @@ namespace Test
         {
             txtDadangky.MaxLength = 2;
         }
+
+        private void cbxDiemdungchan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadPlaceableRelationByTheStop();
+        }
+
+        private void btnThemdtq_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtMatour.Text)) { 
+            var madtq = dtgvThongtindtq.CurrentRow.Cells[2].Value.ToString();
+            var matour = txtMatour.Text;
+            var madiem = TheStopDetailsDAO.Instance.GetMadd(madtq);
+            if (btnThem.Enabled == true) { 
+            if (TheStopDetailsDAO.Instance.InsertTheStopDetails(cbxDiemdungchan.SelectedValue.ToString(), txtMatour.Text, madtq))
+            {
+                MessageBox.Show("Thêm điểm tham quan thành công");
+                cbxDiemdungchan.Focus();
+                dtgvDtqdachon.DataSource = PlaceableDAO.Instance.LoadPlaceableListChoose(matour);
+            }
+            }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn tour.");
+            }
+        }
+
+        private void txtMatour_TextChanged(object sender, EventArgs e)
+        {
+            var matour = txtMatour.Text;
+            var dt = PlaceableDAO.Instance.LoadPlaceableListChoose(matour);
+            dtgvDtqdachon.DataSource = dt;
+            //if (dt. < 1 ) { 
+            //    btnXoadtq.Enabled = false;
+            //}
+            //else if (dt.Rows.Count >= 1)
+            //{ 
+            //    btnXoadtq.Enabled = true;
+            //}
+
+
+
+        }
+
+        private void btnXoadtq_Click(object sender, EventArgs e)
+        {
+            //var madtq = dtgvDtqdachon.CurrentRow.Cells[2].Value.ToString());
+            //var matour = txtMatour.Text;
+            //var madiem = TheStopDetailsDAO.Instance.GetMadd(dtgvDtqdachon.CurrentRow.Cells[2].Value.ToString(), matour);
+            if (TheStopDetailsDAO.Instance.DeleteTheStopDetails(TheStopDetailsDAO.Instance.GetMadd(dtgvDtqdachon.CurrentRow.Cells[2].Value.ToString()), txtMatour.Text, dtgvDtqdachon.CurrentRow.Cells[2].Value.ToString()))
+            {
+                MessageBox.Show("Xóa điểm tham quan thành công.");
+                dtgvDtqdachon.DataSource = PlaceableDAO.Instance.LoadPlaceableListChoose(txtMatour.Text);
+            }
+
+        }
+
     }
     #endregion
 
