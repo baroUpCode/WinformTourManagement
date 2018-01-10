@@ -53,7 +53,6 @@ namespace Test
             lstvThongtintour.Tag = "quy";
             
         }
-
         private void rbtnThang_CheckedChanged(object sender, EventArgs e)
         {
             cbxQuyThang.Enabled = true;
@@ -137,6 +136,11 @@ namespace Test
             dtpNgaybd.Value = DateTime.Now;
             lstvThongtintour.Items.Clear();
             txtTongtien.Clear();
+        }
+
+        private void btnInphieu_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

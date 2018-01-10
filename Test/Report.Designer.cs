@@ -173,6 +173,7 @@
             this.btnInphieu.TabIndex = 12;
             this.btnInphieu.Text = "In Phiếu";
             this.btnInphieu.UseVisualStyleBackColor = true;
+            this.btnInphieu.Click += new System.EventHandler(this.btnInphieu_Click);
             // 
             // btnTimkiem
             // 
@@ -243,7 +244,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 538);
+            this.ClientSize = new System.Drawing.Size(941, 538);
             this.Controls.Add(this.btnLammoi);
             this.Controls.Add(this.dtpNgaykt);
             this.Controls.Add(this.label4);

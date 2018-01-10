@@ -120,6 +120,11 @@ namespace Test.DAO
             var dt = DataProvider.Instance.ExecuteQuery(query);
             return dt;
         }
+        /// <summary>
+        /// Lấy thông tin tour khi chọn ngày đi
+        /// </summary>
+        /// <param name="ngaydi"></param>
+        /// <returns></returns>
         public List<TourDTO> GetTourByBeginMonth(int ngaydi)
         {
             List<TourDTO> list = new List<TourDTO>();
@@ -132,6 +137,11 @@ namespace Test.DAO
             }
             return list;
         }
+        /// <summary>
+        /// Lấy thông tin tour khi chọn quý
+        /// </summary>
+        /// <param name="quy"></param>
+        /// <returns></returns>
         public List<TourDTO> GetTourByQuy(int quy)
         {
             List<TourDTO> list = new List<TourDTO>();
@@ -144,6 +154,12 @@ namespace Test.DAO
             }
             return list;
         }
+        /// <summary>
+        /// Lấy thông tin tour tỏng khoảng thời gian được chọn
+        /// </summary>
+        /// <param name="ngaybd"></param>
+        /// <param name="ngaykt"></param>
+        /// <returns></returns>
         public List<TourDTO> GetTourByCreateDay(DateTime ngaybd , DateTime ngaykt )
         {
             List<TourDTO> list = new List<TourDTO>();

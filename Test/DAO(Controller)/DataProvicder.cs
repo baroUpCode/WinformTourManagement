@@ -41,7 +41,9 @@ namespace Test
         /// <returns></returns>
         public DataTable ExecuteQuery(string query,object[] parameter = null)
         { 
+            //Khởi tạo đối tượng database để nắm giữ dữ liệu cuối cùng khi thực thi hoàn tất
             DataTable dt = new DataTable();
+            //Mở kết nối với connectionStr được khai báo
             using (SqlConnection connection = new SqlConnection(connectionStr)){ 
             connection.Open();
             //Thực thi câu truy vấn được khai báo tới DB đã kết nối từ đối tượng connection, command hiện tại đang giữ dữ liệu trả về
